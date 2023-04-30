@@ -1,0 +1,2102 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  Inventory Tweaks Coremod (InventoryTweaks-1.64+dev.151.jar)
+  FarseekCoreMod (Farseek-1.12-2.5.jar)
+  IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+  CorePlugin (SmoothFont-mc1.12.2-2.1.2.jar)
+  MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.280.jar)
+  SpongeCoremod (spongeforge-1.12.2-2838-7.4.8-RC4142.jar)
+  TheBetweenlandsLoadingPlugin (TheBetweenlands-3.5.10-core.jar)
+  ForgelinPlugin (Forgelin-1.8.2.jar)
+  CTMCorePlugin (CTM-MC1.12.2-0.3.3.22.jar)
+  LoadingPlugin (BetterWithLib-1.12-1.5.jar)
+  BNBGamingCore (BNBGamingCore-1.12.2-0.12.0.jar)
+  BetterFoliageLoader (BetterFoliage-MC1.12-2.3.1.jar)
+  SevPatches (sevpatches-1.9-10.jar)
+  Do not report to Forge! (If you haven't disabled the FoamFix coremod, try disabling it in the config! Note that this bit of text will still appear.) (foamfix-0.10.10-1.12.2.jar)
+  RandomPatches (randompatches-1.12.2-1.22.0.0.jar)
+  JustEnoughIDs Extension Plugin (JustEnoughIDs-1.0.3-55.jar)
+  LoadingPlugin (ResourceLoader-MC1.12.1-1.5.3.jar)
+  IvToolkit (IvToolkit-1.3.3-1.12.jar)
+  CoreMod (Aroma1997Core-1.12.2-2.0.0.2.jar)
+  Quark Plugin (Quark-r1.5-158.jar)
+  AstralCore (astralsorcery-1.12.2-1.10.21.jar)
+Contact their authors BEFORE contacting forge
+
+// I just don't know what went wrong :(
+
+Time: 4/30/23 8:10 AM
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.00 seconds (should be max 0.05)
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.fillBuffer(ReadAheadBufferedStream.java:131)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.read(ReadAheadBufferedStream.java:104)
+	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacketArray(StandardPacketInputStream.java:247)
+	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacket(StandardPacketInputStream.java:218)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1518)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1499)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:318)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:220)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:149)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:163)
+	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getRegions(WorldMySQLRegionManager.java:646)
+	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getTopRegion(WorldMySQLRegionManager.java:664)
+	at br.net.fabiozumbi12.RedProtect.Sponge.region.RegionManager.getTopRegion(RegionManager.java:287)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.lambda$onFlow$0(BlockListener.java:422)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener$$Lambda$6839/333411152.accept(Unknown Source)
+	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:408)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.onFlow(BlockListener.java:421)
+	at org.spongepowered.common.event.listener.PreListener_BlockListener_onFlow154.handle(Unknown Source)
+	at org.spongepowered.common.event.RegisteredListener.handle(RegisteredListener.java:97)
+	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:383)
+	at org.spongepowered.mod.event.SpongeModEventManager.extendedPost(SpongeModEventManager.java:458)
+	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:419)
+	at org.spongepowered.common.event.SpongeEventManager.post(SpongeEventManager.java:467)
+	at org.spongepowered.common.SpongeImpl.postEvent(SpongeImpl.java:249)
+	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:603)
+	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:555)
+	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreOnUpdate(BlockDynamicLiquid.java:577)
+	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java)
+	at org.spongepowered.common.event.tracking.TrackingUtil.updateTickBlock(TrackingUtil.java:276)
+	at net.minecraft.world.WorldServer.redirect$zmh000$onUpdateTick(WorldServer.java:3949)
+	at net.minecraft.world.WorldServer.func_72955_a(WorldServer.java:737)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:223)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.fillBuffer(ReadAheadBufferedStream.java:131)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.read(ReadAheadBufferedStream.java:104)
+	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacketArray(StandardPacketInputStream.java:247)
+	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacket(StandardPacketInputStream.java:218)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.readPacket(AbstractQueryProtocol.java:1518)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.getResult(AbstractQueryProtocol.java:1499)
+	at org.mariadb.jdbc.internal.protocol.AbstractQueryProtocol.executeQuery(AbstractQueryProtocol.java:318)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeInternal(ClientSidePreparedStatement.java:220)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.execute(ClientSidePreparedStatement.java:149)
+	at org.mariadb.jdbc.ClientSidePreparedStatement.executeQuery(ClientSidePreparedStatement.java:163)
+	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getRegions(WorldMySQLRegionManager.java:646)
+	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getTopRegion(WorldMySQLRegionManager.java:664)
+	at br.net.fabiozumbi12.RedProtect.Sponge.region.RegionManager.getTopRegion(RegionManager.java:287)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.lambda$onFlow$0(BlockListener.java:422)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener$$Lambda$6839/333411152.accept(Unknown Source)
+	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:408)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.onFlow(BlockListener.java:421)
+	at org.spongepowered.common.event.listener.PreListener_BlockListener_onFlow154.handle(Unknown Source)
+	at org.spongepowered.common.event.RegisteredListener.handle(RegisteredListener.java:97)
+	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:383)
+	at org.spongepowered.mod.event.SpongeModEventManager.extendedPost(SpongeModEventManager.java:458)
+	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:419)
+	at org.spongepowered.common.event.SpongeEventManager.post(SpongeEventManager.java:467)
+	at org.spongepowered.common.SpongeImpl.postEvent(SpongeImpl.java:249)
+	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:603)
+	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:555)
+	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreOnUpdate(BlockDynamicLiquid.java:577)
+	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java)
+	at org.spongepowered.common.event.tracking.TrackingUtil.updateTickBlock(TrackingUtil.java:276)
+	at net.minecraft.world.WorldServer.redirect$zmh000$onUpdateTick(WorldServer.java:3949)
+	at net.minecraft.world.WorldServer.func_72955_a(WorldServer.java:737)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:223)
+
+-- Sponge PhaseTracker --
+Details:
+	Phase Stack: /********************************************************************************************************************************/
+/*   - Phase: Tick{Block:BlockTickPhase}                                                                                        */
+/*     Context:                                                                                                                 */
+/*     - Source: SpongeLocatableBlock{blockState=minecraft:flowing_lava[level=0], position=(995, 6, -51), worldReference=world} */
+/********************************************************************************************************************************/
+
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.handler$zkb000$onCrashReport(MinecraftServer.java:4687)
+	at net.minecraft.server.MinecraftServer.func_71230_b(MinecraftServer.java:889)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71230_b(DedicatedServer.java:371)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- Thread Dump --
+Details:
+	Threads: "d4j-parallel-1-20" Id=227 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@51576b1e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@51576b1e
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"parallel-19" Id=226 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5f908f44
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5f908f44
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-18" Id=225 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5baf006e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5baf006e
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"parallel-17" Id=224 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ead857f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ead857f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Sponge - Async Light Thread" Id=223 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@74c8122f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@74c8122f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Sponge - Async Light Thread" Id=222 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@74c8122f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@74c8122f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"d4j-parallel-1-16" Id=221 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2ff9595d
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2ff9595d
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-15" Id=220 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@c7690bc
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@c7690bc
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-14" Id=219 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7e827a30
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7e827a30
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Chunk I/O Executor Thread-1" Id=218 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4aef56a5
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4aef56a5
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #2" Id=213 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"File IO Thread" Id=212 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"d4j-parallel-1-13" Id=211 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2fb9cd14
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2fb9cd14
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-12" Id=210 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@17725b2f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@17725b2f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-20" Id=209 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-19" Id=208 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-18" Id=207 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-17" Id=206 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-11" Id=203 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4a26cb89
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4a26cb89
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Timer-3" Id=199 TIMED_WAITING on java.util.TaskQueue@2b966eb4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@2b966eb4
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"d4j-events-3" Id=197 WAITING on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-parallel-1-10" Id=196 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@33e992be
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@33e992be
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-9" Id=195 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4f6f7dc9
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4f6f7dc9
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-gateway-3" Id=194 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5794595e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5794595e
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"parallel-8" Id=193 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3e5b56c5
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3e5b56c5
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-7" Id=192 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@41d84fd2
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@41d84fd2
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Timer-2" Id=191 TIMED_WAITING on java.util.TaskQueue@756de315
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@756de315
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"d4j-events-2" Id=190 WAITING on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-events-1" Id=189 TIMED_WAITING on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2e38f3ca
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-parallel-1-6" Id=188 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@c60a4f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@c60a4f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-limiter-2" Id=187 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@64cf99ec
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@64cf99ec
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-5" Id=186 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@676afc78
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@676afc78
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-4" Id=185 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7d85decb
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7d85decb
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-3" Id=184 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4d213746
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4d213746
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-2" Id=183 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@55b9c7f7
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@55b9c7f7
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"boundedElastic-1" Id=182 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@65806804
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@65806804
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"HikariPool-1 housekeeper" Id=180 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@36a091f9
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@36a091f9
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-32" Id=178 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@727f0b6c
+	-  locked java.util.Collections$UnmodifiableSet@69e2fcab
+	-  locked sun.nio.ch.EPollSelectorImpl@626eedee
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-31" Id=177 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@f4479db
+	-  locked java.util.Collections$UnmodifiableSet@3d590e93
+	-  locked sun.nio.ch.EPollSelectorImpl@7a1e48c2
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-30" Id=176 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@37f7463f
+	-  locked java.util.Collections$UnmodifiableSet@498ef3ce
+	-  locked sun.nio.ch.EPollSelectorImpl@3e7da9bc
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-29" Id=175 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6528c185
+	-  locked java.util.Collections$UnmodifiableSet@10f06625
+	-  locked sun.nio.ch.EPollSelectorImpl@3d47692f
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-28" Id=174 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1d3b1cba
+	-  locked java.util.Collections$UnmodifiableSet@23958c50
+	-  locked sun.nio.ch.EPollSelectorImpl@71bd3abd
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-27" Id=173 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@12554e
+	-  locked java.util.Collections$UnmodifiableSet@1340da27
+	-  locked sun.nio.ch.EPollSelectorImpl@22acd160
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-26" Id=172 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@565bda39
+	-  locked java.util.Collections$UnmodifiableSet@59a32bae
+	-  locked sun.nio.ch.EPollSelectorImpl@790f46d5
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-25" Id=171 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4b89bdf1
+	-  locked java.util.Collections$UnmodifiableSet@5e8dd745
+	-  locked sun.nio.ch.EPollSelectorImpl@2cec0b5e
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-24" Id=170 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@568f44bf
+	-  locked java.util.Collections$UnmodifiableSet@1631fb9b
+	-  locked sun.nio.ch.EPollSelectorImpl@2bef05a5
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-23" Id=169 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@10d1ba99
+	-  locked java.util.Collections$UnmodifiableSet@20d67039
+	-  locked sun.nio.ch.EPollSelectorImpl@25ffc0f4
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-22" Id=168 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@cd06220
+	-  locked java.util.Collections$UnmodifiableSet@1524bd02
+	-  locked sun.nio.ch.EPollSelectorImpl@5841bee8
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-21" Id=167 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@8bcd84d
+	-  locked java.util.Collections$UnmodifiableSet@1b7836db
+	-  locked sun.nio.ch.EPollSelectorImpl@653c5719
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-20" Id=166 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@14b686f6
+	-  locked java.util.Collections$UnmodifiableSet@24caf5cf
+	-  locked sun.nio.ch.EPollSelectorImpl@3027c721
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-19" Id=165 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4a5a3fab
+	-  locked java.util.Collections$UnmodifiableSet@10ce06d5
+	-  locked sun.nio.ch.EPollSelectorImpl@6c722622
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-18" Id=164 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@306fa30c
+	-  locked java.util.Collections$UnmodifiableSet@43785c43
+	-  locked sun.nio.ch.EPollSelectorImpl@44af3df3
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-17" Id=163 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@58c484e0
+	-  locked java.util.Collections$UnmodifiableSet@38dcc983
+	-  locked sun.nio.ch.EPollSelectorImpl@1a89f8e4
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-16" Id=162 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@75667a57
+	-  locked java.util.Collections$UnmodifiableSet@74fdbafc
+	-  locked sun.nio.ch.EPollSelectorImpl@4922a568
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-15" Id=161 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@8e2c307
+	-  locked java.util.Collections$UnmodifiableSet@56ac8349
+	-  locked sun.nio.ch.EPollSelectorImpl@2f40f6a2
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-14" Id=160 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@10deef09
+	-  locked java.util.Collections$UnmodifiableSet@9ed9db4
+	-  locked sun.nio.ch.EPollSelectorImpl@258f7ef8
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-13" Id=159 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@17099d75
+	-  locked java.util.Collections$UnmodifiableSet@250de216
+	-  locked sun.nio.ch.EPollSelectorImpl@17988c04
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-12" Id=158 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@424cf719
+	-  locked java.util.Collections$UnmodifiableSet@2729c2d9
+	-  locked sun.nio.ch.EPollSelectorImpl@5897d270
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-11" Id=157 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@7c90117c
+	-  locked java.util.Collections$UnmodifiableSet@364751aa
+	-  locked sun.nio.ch.EPollSelectorImpl@480859a2
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-10" Id=156 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@13968c44
+	-  locked java.util.Collections$UnmodifiableSet@7ac0abe5
+	-  locked sun.nio.ch.EPollSelectorImpl@4a0f154a
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-9" Id=155 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6275e30
+	-  locked java.util.Collections$UnmodifiableSet@a61955f
+	-  locked sun.nio.ch.EPollSelectorImpl@17ab1d63
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-8" Id=154 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2db2dcfb
+	-  locked java.util.Collections$UnmodifiableSet@52d2d52b
+	-  locked sun.nio.ch.EPollSelectorImpl@3be57d5e
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-7" Id=153 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6e38d79f
+	-  locked java.util.Collections$UnmodifiableSet@68757c6a
+	-  locked sun.nio.ch.EPollSelectorImpl@32461879
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-6" Id=152 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@531b309b
+	-  locked java.util.Collections$UnmodifiableSet@17a4dc5e
+	-  locked sun.nio.ch.EPollSelectorImpl@7d240baf
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-5" Id=151 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@3f88751a
+	-  locked java.util.Collections$UnmodifiableSet@7c5dd8ad
+	-  locked sun.nio.ch.EPollSelectorImpl@4d4c35d4
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-4" Id=150 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@76c8b055
+	-  locked java.util.Collections$UnmodifiableSet@47bfc4fe
+	-  locked sun.nio.ch.EPollSelectorImpl@32e769b6
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-3" Id=149 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@3b6359b6
+	-  locked java.util.Collections$UnmodifiableSet@29e976c7
+	-  locked sun.nio.ch.EPollSelectorImpl@72e7b953
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-2" Id=148 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1a1021b7
+	-  locked java.util.Collections$UnmodifiableSet@23b19e3f
+	-  locked sun.nio.ch.EPollSelectorImpl@18e517ad
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-1" Id=147 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@23ecd16
+	-  locked java.util.Collections$UnmodifiableSet@6003ccd8
+	-  locked sun.nio.ch.EPollSelectorImpl@b080071
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:817)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	...
+
+
+"MVStore background writer nio:/AMP/Minecraft/config/rankupper/playerstats.db.mv.db" Id=146 TIMED_WAITING on java.lang.Object@7b0554f6
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.Object@7b0554f6
+	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2715)
+
+
+"d4j-parallel-1-1" Id=144 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@546a6dcf
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@546a6dcf
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-limiter-1" Id=143 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@20485c29
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@20485c29
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Votifier epoll boss" Id=142 RUNNABLE (in native)
+	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native Method)
+	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native.java:148)
+	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native.java:141)
+	at com.vexsoftware.votifier.io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:290)
+	at com.vexsoftware.votifier.io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:347)
+	at com.vexsoftware.votifier.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at com.vexsoftware.votifier.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at com.vexsoftware.votifier.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	...
+
+
+"boundedElastic-evictor-1" Id=141 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5ed321f4
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5ed321f4
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"threadDeathWatcher-2-1" Id=139 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #1" Id=138 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Mc2Discord" Id=137 WAITING on java.util.concurrent.CountDownLatch$Sync@fa06c3c
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.CountDownLatch$Sync@fa06c3c
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:231)
+	at ml.denisd3d.mc2discord.repack.reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:87)
+	at ml.denisd3d.mc2discord.repack.reactor.core.publisher.Mono.block(Mono.java:1707)
+	...
+
+
+"Thread-15" Id=135 RUNNABLE (in native)
+	at sun.nio.fs.LinuxWatchService.poll(Native Method)
+	at sun.nio.fs.LinuxWatchService.access$600(LinuxWatchService.java:47)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:314)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Server Watchdog" Id=134 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:496)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:484)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:45)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Query Listener #1" Id=133 RUNNABLE (in native)
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	-  locked java.net.PlainDatagramSocketImpl@8236c12
+	at java.net.DatagramSocket.receive(DatagramSocket.java:743)
+	-  locked java.net.DatagramPacket@6a68d02b
+	-  locked java.net.DatagramSocket@38398dc5
+	at net.minecraft.network.rcon.RConThreadQuery.run(SourceFile:269)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Java2D Disposer" Id=127 WAITING on java.lang.ref.ReferenceQueue$Lock@2d739013
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@2d739013
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at sun.java2d.Disposer.run(Disposer.java:148)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"ResearchIOThread" Id=126 TIMED_WAITING on java.util.TaskQueue@213ed80d
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@213ed80d
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"SeriousVote-SQL housekeeper" Id=119 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@326e73c4
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@326e73c4
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ForkJoinPool.commonPool-worker-11" Id=113 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-21" Id=118 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-14" Id=114 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-17" Id=117 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"Netty Epoll Server IO #0" Id=112 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Timer-1" Id=110 TIMED_WAITING on java.util.TaskQueue@2f69fcf4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@2f69fcf4
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"SeriousVote-SQL housekeeper" Id=105 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@78c0a7a4
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@78c0a7a4
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Timer-0" Id=104 TIMED_WAITING on java.util.TaskQueue@39f11b2b
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@39f11b2b
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"OkHttp metadata.luckperms.net Writer" Id=94 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7fbd426b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7fbd426b
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"OkHttp ConnectionPool" Id=93 TIMED_WAITING on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@1fd39f34
+	at java.lang.Object.wait(Native Method)
+	-  waiting on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@1fd39f34
+	at java.lang.Object.wait(Object.java:460)
+	at me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool.lambda$new$0(RealConnectionPool.java:62)
+	at me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool$$Lambda$1119/1264449633.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@5a133644
+
+
+"OkHttp metadata.luckperms.net" Id=92 RUNNABLE (in native)
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:464)
+	at sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:68)
+	at sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1346)
+	at sun.security.ssl.SSLSocketImpl.access$300(SSLSocketImpl.java:73)
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@62d3f6ed
+
+
+"luckperms-hikari housekeeper" Id=90 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@534a91df
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@534a91df
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"mysql-cj-abandoned-connection-cleanup" Id=89 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@46713fc7
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@46713fc7
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at me.lucko.luckperms.lib.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@7f5d06f5
+
+
+"Thread-4" Id=87 RUNNABLE (in native)
+	at sun.nio.fs.LinuxWatchService.poll(Native Method)
+	at sun.nio.fs.LinuxWatchService.access$600(LinuxWatchService.java:47)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:314)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Keep-Alive-SocketCleaner" Id=82 WAITING on sun.net.www.http.KeepAliveStreamCleaner@45582202
+	at java.lang.Object.wait(Native Method)
+	-  waiting on sun.net.www.http.KeepAliveStreamCleaner@45582202
+	at sun.net.www.http.KeepAliveStreamCleaner.run(KeepAliveStreamCleaner.java:101)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"pool-2-thread-10" Id=81 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@38c1d0da
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@38c1d0da
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:492)
+	at java.util.concurrent.LinkedBlockingDeque.take(LinkedBlockingDeque.java:680)
+	at sun.nio.fs.AbstractWatchService.take(AbstractWatchService.java:118)
+	at me.lucko.luckperms.common.storage.implementation.file.watcher.AbstractFileWatcher.runEventProcessingLoop(AbstractFileWatcher.java:128)
+	at me.lucko.luckperms.common.storage.implementation.file.watcher.FileWatcher.lambda$new$0(FileWatcher.java:60)
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@274c170f
+
+
+"pool-2-thread-7" Id=78 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-6" Id=77 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7acce00b
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ForkJoinPool.commonPool-worker-7" Id=65 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-31" Id=57 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-24" Id=58 TIMED_WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-2" Id=52 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-27" Id=53 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-20" Id=54 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-13" Id=56 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-6" Id=55 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-30" Id=48 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-23" Id=50 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-1" Id=43 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-26" Id=44 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-19" Id=45 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-15" Id=41 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-8" Id=42 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-22" Id=40 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-29" Id=39 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-18" Id=36 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-25" Id=35 WAITING on java.util.concurrent.ForkJoinPool@1e2b042a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@1e2b042a
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"Sponge Async Scheduler Thread" Id=34 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3f826a74
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3f826a74
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2163)
+	at org.spongepowered.common.scheduler.AsyncScheduler.preTick(AsyncScheduler.java:121)
+	at org.spongepowered.common.scheduler.SchedulerBase.runTick(SchedulerBase.java:109)
+	at org.spongepowered.common.scheduler.AsyncScheduler.mainLoop(AsyncScheduler.java:68)
+	at org.spongepowered.common.scheduler.AsyncScheduler$$Lambda$246/192097035.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Server console handler" Id=33 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@70c2e544
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@740e816c
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=32 RUNNABLE
+
+
+"Server thread" Id=30 RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.fillBuffer(ReadAheadBufferedStream.java:131)
+	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.read(ReadAheadBufferedStream.java:104)
+	-  locked org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream@42ffc837
+	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacketArray(StandardPacketInputStream.java:247)
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@6e02cbd6
+
+
+"Server Infinisleeper" Id=29 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
+
+
+"Snooper Timer" Id=28 TIMED_WAITING on java.util.TaskQueue@90dfb97
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@90dfb97
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@9081e3b
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@9081e3b
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@358ad15d
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@358ad15d
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 5.10.0-22-amd64
+	Java Version: 1.8.0_362, Temurin
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Temurin
+	Memory: 1531285744 bytes (1460 MB) / 5677514752 bytes (5414 MB) up to 11453595648 bytes (10923 MB)
+	JVM Flags: 1 total; -Xmx12288M
+	IntCache: cache: 6, tcache: 111, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 262 mods loaded, 262 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	Mods:
+
+	| State  | ID                       | Version                  | Source                                             | Signature                                |
+	|:------ |:------------------------ |:------------------------ |:-------------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft                | 1.12.2                   | minecraft.jar                                      | None                                     |
+	| LCHIJA | mcp                      | 9.42                     | minecraft.jar                                      | None                                     |
+	| LCHIJA | FML                      | 8.0.99.99                | server.jar                                         | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge                    | 14.23.5.2860             | server.jar                                         | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | ivtoolkit                | 1.3.3-1.12               | minecraft.jar                                      | None                                     |
+	| LCHIJA | micdoodlecore            |                          | minecraft.jar                                      | None                                     |
+	| LCHIJA | smoothfontcore           | mc1.12.2-2.1.2           | minecraft.jar                                      | None                                     |
+	| LCHIJA | spongeapi                | 7.4.0-5ea6215            | spongeforge-1.12.2-2838-7.4.8-RC4142.jar           | None                                     |
+	| LCHIJA | sponge                   | 1.12.2-7.4.8-SNAPSHOT    | spongeforge-1.12.2-2838-7.4.8-RC4142.jar           | None                                     |
+	| LCHIJA | spongeforge              | 1.12.2-2838-7.4.8-RC4142 | spongeforge-1.12.2-2838-7.4.8-RC4142.jar           | None                                     |
+	| LCHIJA | bnbgamingcore            | 0.12.0                   | minecraft.jar                                      | None                                     |
+	| LCHIJA | foamfixcore              | 7.7.4                    | minecraft.jar                                      | None                                     |
+	| LCHIJA | randompatches            | 1.12.2-1.22.0.0          | randompatches-1.12.2-1.22.0.0.jar                  | None                                     |
+	| LCHIJA | movillages               | 1.5.4                    | [1.12]MoVillages-1.5.4.jar                         | None                                     |
+	| LCHIJA | charcoalblock            | 1.1                      | A Block of Charcoal-1.2.jar                        | None                                     |
+	| LCHIJA | crafttweaker             | 4.1.20                   | CraftTweaker2-1.12-4.1.20.574.jar                  | None                                     |
+	| LCHIJA | mtlib                    | 3.0.6                    | MTLib-3.0.6.jar                                    | None                                     |
+	| LCHIJA | modtweaker               | 4.0.17                   | modtweaker-4.0.17.jar                              | None                                     |
+	| LCHIJA | jei                      | 4.15.0.283               | jei_1.12.2-4.15.0.283.jar                          | None                                     |
+	| LCHIJA | abyssalcraft             | 1.9.19.1                 | AbyssalCraft-1.12.2-1.9.19.1.jar                   | 220f10d3a93b3ff5fbaa7434cc629d863d6751b9 |
+	| LCHIJA | chisel                   | MC1.12.2-0.2.1.35        | Chisel-MC1.12.2-0.2.1.35.jar                       | None                                     |
+	| LCHIJA | mantle                   | 1.12-1.3.3.55            | Mantle-1.12-1.3.3.55.jar                           | None                                     |
+	| LCHIJA | twilightforest           | 3.8.689                  | twilightforest-1.12.2-3.8.689-universal.jar        | None                                     |
+	| LCHIJA | tconstruct               | 1.12.2-2.12.0.135        | TConstruct-1.12.2-2.12.0.135.jar                   | None                                     |
+	| LCHIJA | acintegration            | 1.11.2                   | AbyssalCraft Integration-1.12.2-1.11.2.jar         | 220f10d3a93b3ff5fbaa7434cc629d863d6751b9 |
+	| LCHIJA | fastbench                | 1.7.3                    | FastWorkbench-1.12.2-1.7.3.jar                     | None                                     |
+	| LCHIJA | actuallyadditions        | 1.12.2-r149              | ActuallyAdditions-1.12.2-r149.jar                  | None                                     |
+	| LCHIJA | baubles                  | 1.5.2                    | Baubles-1.12-1.5.2.jar                             | None                                     |
+	| LCHIJA | actuallybaubles          | 1.1                      | ActuallyBaubles-1.12-1.1.jar                       | None                                     |
+	| LCHIJA | animalium                | 0.3.8                    | Animalium-0.3.8.jar                                | None                                     |
+	| LCHIJA | antiqueatlas             | 4.5.1                    | antiqueatlas-1.12.2-4.5.1.jar                      | e631d7254e451d0360d0148cb21407d5511d45e9 |
+	| LCHIJA | base                     | 3.13.0                   | base-1.12.2-3.13.0.jar                             | None                                     |
+	| LCHIJA | contenttweaker           | 1.12.2-4.9.1             | ContentTweaker-1.12.2-4.9.1.jar                    | None                                     |
+	| LCHIJA | immersiveengineering     | 0.12-98                  | ImmersiveEngineering-0.12-98.jar                   | None                                     |
+	| LCHIJA | geolosys                 | 2.2.6                    | Geolosys-1.12.2-2.2.6.jar                          | None                                     |
+	| LCHIJA | buildcraftlib            | 7.99.24.1                | buildcraft-core-7.99.24.1.jar                      | None                                     |
+	| LCHIJA | buildcraftcore           | 7.99.24.1                | buildcraft-core-7.99.24.1.jar                      | None                                     |
+	| LCHIJA | cyclicmagic              | 1.20.3                   | Cyclic-1.12.2-1.20.3.jar                           | 0e5cb559be7d03f3fc18b8cba547d663e25f28af |
+	| LCHIJA | redstoneflux             | 2.1.0                    | RedstoneFlux-1.12-2.1.0.6-universal.jar            | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| LCHIJA | mekanism                 | 1.12.2-9.8.3.390         | Mekanism-1.12.2-9.8.3.390.jar                      | None                                     |
+	| LCHIJA | natura                   | 1.12.2-4.3.2.69          | natura-1.12.2-4.3.2.69.jar                         | None                                     |
+	| LCHIJA | traverse                 | 1.6.0                    | Traverse-1.12.2-1.6.0-69.jar                       | None                                     |
+	| LCHIJA | betterwithmods           | 1.12-2.3.20-1027         | BetterWithMods-1.12-2.3.20-1027.jar                | None                                     |
+	| LCHIJA | appleskin                | 1.0.14                   | AppleSkin-mc1.12-1.0.14.jar                        | None                                     |
+	| LCHIJA | appliedenergistics2      | rv6-stable-7             | appliedenergistics2-rv6-stable-7.jar               | None                                     |
+	| LCHIJA | armoreablemobs           | 1.1.2                    | armoreablemobs-1.12.2-1.1.8.jar                    | None                                     |
+	| LCHIJA | aroma1997core            | 2.0.0.2                  | Aroma1997Core-1.12.2-2.0.0.2.jar                   | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+	| LCHIJA | aromabackup              | 2.1.1.4                  | AromaBackup-1.12.2-2.1.1.4.jar                     | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+	| LCHIJA | aromabackuprecovery      | 2.1.1.4                  | AromaBackup-1.12.2-2.1.1.4.jar                     | dfbfe4c473253d8c5652417689848f650b2cbe32 |
+	| LCHIJA | astikorcarts             | 1.12.2-0.1.2.7           | astikorcarts-1.12.2-0.1.2.7.jar                    | None                                     |
+	| LCHIJA | astralsorcery            | 1.10.21                  | astralsorcery-1.12.2-1.10.21.jar                   | a0f0b759d895c15ceb3e3bcb5f3c2db7c582edf0 |
+	| LCHIJA | quark                    | r1.5-158                 | Quark-r1.5-158.jar                                 | None                                     |
+	| LCHIJA | autoreglib               | 1.3-31                   | AutoRegLib-1.3-31.jar                              | None                                     |
+	| LCHIJA | bdlib                    | 1.14.3.12                | bdlib-1.14.3.12-mc1.12.2.jar                       | None                                     |
+	| LCHIJA | betterwithaddons         | 0.50-hotfix              | Better With Addons-0.50-hotfix.jar                 | None                                     |
+	| LCHIJA | betterbedrock            | 5.1                      | BetterBedrock-1.12.2-5.1.11.jar                    | None                                     |
+	| LCHIJA | betterbuilderswands      | 0.13.2                   | BetterBuildersWands-1.12.2-0.13.2.271+5997513.jar  | None                                     |
+	| LCHIJA | betterwithlib            | ${version}               | BetterWithLib-1.12-1.5.jar                         | None                                     |
+	| LCHIJA | bibliocraft              | 2.4.5                    | BiblioCraft[v2.4.5][MC1.12.2].jar                  | None                                     |
+	| LCHIJA | waila                    | 1.8.26                   | Hwyla-1.8.26-B41_1.12.2.jar                        | None                                     |
+	| LCHIJA | modularrouters           | 1.12.2-3.3.0-33          | modular-routers-1.12.2-3.3.0-33.jar                | None                                     |
+	| LCHIJA | guideapi                 | 1.12-2.1.8-63            | Guide-API-1.12-2.1.8-63.jar                        | None                                     |
+	| LCHIJA | bloodmagic               | 1.12.2-2.4.1-103         | BloodMagic-1.12.2-2.4.1-103.jar                    | None                                     |
+	| LCHIJA | bnbgaminglib             | 2.17.6                   | BNBGamingLib-1.12.2-2.17.6.jar                     | None                                     |
+	| LCHIJA | bonsaitrees              | 1.1.4                    | bonsaitrees-1.1.4-b170.jar                         | None                                     |
+	| LCHIJA | bookshelf                | 2.3.581                  | Bookshelf-1.12.2-2.3.581.jar                       | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | bringbedrockback         | 0.0.4                    | BringBedrockBack-0.0.4.jar                         | None                                     |
+	| LCHIJA | buildcraftbuilders       | 7.99.24.1                | buildcraft-builders-7.99.24.1.jar                  | None                                     |
+	| LCHIJA | buildcraftfactory        | 7.99.24.1                | buildcraft-factory-7.99.24.1.jar                   | None                                     |
+	| LCHIJA | buildcraftrobotics       | 7.99.24.1                | buildcraft-robotics-7.99.24.1.jar                  | None                                     |
+	| LCHIJA | buildcrafttransport      | 7.99.24.1                | buildcraft-transport-7.99.24.1.jar                 | None                                     |
+	| LCHIJA | buildcraftsilicon        | 7.99.24.1                | buildcraft-silicon-7.99.24.1.jar                   | None                                     |
+	| LCHIJA | buildinggadgets          | 2.8.3                    | BuildingGadgets-2.8.3.jar                          | None                                     |
+	| LCHIJA | car                      | 1.2.12                   | car-1.12.2-1.2.12.jar                              | None                                     |
+	| LCHIJA | gamestages               | 2.0.123                  | GameStages-1.12.2-2.0.123.jar                      | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | carryon                  | 1.12.3                   | CarryOn MC1.12.2 v1.12.3.jar                       | 55e88f24d04398481ae6f1ce76f65fd776f14227 |
+	| LCHIJA | cd4017be_lib             | 6.4.17                   | CD4017BE_lib-1.12.2-6.4.18.jar                     | None                                     |
+	| LCHIJA | ceramics                 | 1.12-1.3.7               | Ceramics-1.12-1.3.7.jar                            | None                                     |
+	| LCHIJA | chameleon                | 1.12-4.1.3               | Chameleon-1.12-4.1.3.jar                           | None                                     |
+	| LCHIJA | chargers                 | 1.2.0.4                  | Chargers-1.12.2-1.2.0.4.jar                        | 58e787c8aafad8b327883f94d4fa544f936d7b01 |
+	| LCHIJA | chiselsandbits           | 14.33                    | chiselsandbits-14.33.jar                           | None                                     |
+	| LCHIJA | clumps                   | 3.1.2                    | Clumps-3.1.2.jar                                   | None                                     |
+	| LCHIJA | codechickenlib           | 3.2.3.358                | CodeChickenLib-1.12.2-3.2.3.358-universal.jar      | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | cyclopscore              | 1.3.0                    | CyclopsCore-1.12.2-1.3.0.jar                       | bd0353b3e8a2810d60dd584e256e364bc3bedd44 |
+	| LCHIJA | commoncapabilities       | 2.4.1                    | CommonCapabilities-1.12.2-2.4.1.jar                | bd0353b3e8a2810d60dd584e256e364bc3bedd44 |
+	| LCHIJA | refinedstorage           | 1.6.16                   | refinedstorage-1.6.16.jar                          | 57893d5b90a7336e8c63fe1c1e1ce472c3d59578 |
+	| LCHIJA | compactmachines3         | 3.0.18                   | compactmachines3-1.12.2-3.0.18-b278.jar            | None                                     |
+	| LCHIJA | conarm                   | 1.2.4                    | conarm-1.12.2-1.2.4.jar                            | 5d5b8aee896a4f5ea3f3114784742662a67ad32f |
+	| LCHIJA | cookingforblockheads     | 6.5.0                    | CookingForBlockheads_1.12.2-6.5.0.jar              | None                                     |
+	| LCHIJA | crafttweakerjei          | 2.0.3                    | CraftTweaker2-1.12-4.1.20.574.jar                  | None                                     |
+	| LCHIJA | cucumber                 | 1.1.3                    | Cucumber-1.12.2-1.1.3.jar                          | None                                     |
+	| LCHIJA | darkutils                | 1.8.230                  | DarkUtils-1.12.2-1.8.230.jar                       | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | death_compass            | 0.0.3                    | DeathCompass-0.0.3.jar                             | None                                     |
+	| LCHIJA | despawningspawners       | 1.1                      | despawningspawners-1.12-1.2.0-2.jar                | None                                     |
+	| LCHIJA | dimensionalcontrol       | 2.13.0                   | DimensionalControl-1.12.2-2.13.0.jar               | None                                     |
+	| LCHIJA | dimstages                | 2.0.23                   | DimensionStages-1.12.2-2.0.23.jar                  | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | dungpipe                 | 1.0                      | Dung Pipe-1.2.jar                                  | None                                     |
+	| LCHIJA | elevatorid               | 1.4.2                    | ElevatorMod-1.12.2-1.4.2.jar                       | None                                     |
+	| LCHIJA | emberroot                | 1.3.9                    | EmberRootZoo-1.12.2-1.3.10.jar                     | None                                     |
+	| LCHIJA | enderstorage             | 2.4.6.137                | EnderStorage-1.12.2-2.4.6.137-universal.jar        | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | enderutilities           | 0.7.15                   | enderutilities-1.12.2-0.7.15.jar                   | 2b03e1423915a189b8094816baa18f239d576dff |
+	| LCHIJA | valkyrielib              | 1.12.2-2.0.20.1          | valkyrielib-1.12.2-2.0.20.1.jar                    | None                                     |
+	| LCHIJA | environmentaltech        | 1.12.2-2.0.20.1          | environmentaltech-1.12.2-2.0.20.1.jar              | None                                     |
+	| LCHIJA | extendedcrafting         | 1.5.6                    | ExtendedCrafting-1.12.2-1.5.6.jar                  | None                                     |
+	| LCHIJA | galacticraftcore         | 4.0.2.280                | GalacticraftCore-1.12.2-4.0.2.280.jar              | None                                     |
+	| LCHIJA | galacticraftplanets      | 4.0.2.280                | Galacticraft-Planets-1.12.2-4.0.2.280.jar          | None                                     |
+	| LCHIJA | mjrlegendslib            | 1.12.2-1.2.0             | MJRLegendsLib-1.12.2-1.2.0.jar                     | b02331787272ec3515ebe63ecdeea0d746653468 |
+	| LCHIJA | extraplanets             | 1.12.2-0.7.0             | ExtraPlanets-1.12.2-0.7.0.jar                      | b02331787272ec3515ebe63ecdeea0d746653468 |
+	| LCHIJA | farmingforblockheads     | 3.1.28                   | FarmingForBlockheads_1.12.2-3.1.28.jar             | None                                     |
+	| LCHIJA | farseek                  | 2.5                      | Farseek-1.12-2.5.jar                               | None                                     |
+	| LCHIJA | fastfurnace              | 1.3.1                    | FastFurnace-1.12.2-1.3.1.jar                       | None                                     |
+	| LCHIJA | fat_cat                  | 0.0.5                    | FatCat-0.0.5.jar                                   | None                                     |
+	| LCHIJA | ferdinandsflowers        | 1.10.4.1                 | Ferdinand's Flowers-1.12.x-1.10.4.1.jar            | None                                     |
+	| LCHIJA | findme                   | 1.1.0                    | findme-1.12.2-1.1.0-8.jar                          | None                                     |
+	| LCHIJA | foamfix                  | 0.10.10-1.12.2           | foamfix-0.10.10-1.12.2.jar                         | None                                     |
+	| LCHIJA | forgelin                 | 1.8.2                    | Forgelin-1.8.2.jar                                 | None                                     |
+	| LCHIJA | forgemultipartcbe        | 2.6.1.81                 | ForgeMultipart-1.12.2-2.6.1.81-universal.jar       | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | microblockcbe            | 2.6.1.81                 | ForgeMultipart-1.12.2-2.6.1.81-universal.jar       | None                                     |
+	| LCHIJA | minecraftmultipartcbe    | 2.6.1.81                 | ForgeMultipart-1.12.2-2.6.1.81-universal.jar       | None                                     |
+	| LCHIJA | galacticrafttweaker      | 1.12.2-1.0.3             | GalacticraftTweaker-1.12.2-1.0.3.jar               | b02331787272ec3515ebe63ecdeea0d746653468 |
+	| LCHIJA | advgenerators            | 0.9.20.12                | generators-0.9.20.12-mc1.12.2.jar                  | None                                     |
+	| LCHIJA | gobblecore               | 1.12-0.1.6.35            | GobbleCore-1.12-0.1.6.35.jar                       | None                                     |
+	| LCHIJA | harvest                  | 1.12-1.2.7-20            | Harvest-1.12-1.2.7-20.jar                          | None                                     |
+	| LCHIJA | horsepower               | 2.6.4                    | HorsePower-1.12.2-2.6.4.74.jar                     | cd7e958342770a8b17c919055da42c24dfefd879 |
+	| LCHIJA | huntingdim               | 1.0.42                   | HuntingDimension-1.12.2-1.0.42.jar                 | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | igwmod                   | 1.4.4-15                 | IGW-Mod-1.12.2-1.4.4-15-universal.jar              | None                                     |
+	| LCHIJA | mcjtylib_ng              | 3.5.4                    | mcjtylib-1.12-3.5.4.jar                            | None                                     |
+	| LCHIJA | immcraft                 | 1.6.0                    | immcraft-1.12-1.6.0.jar                            | None                                     |
+	| LCHIJA | immersivepetroleum       | 1.1.9                    | immersivepetroleum-1.12.2-1.1.9.jar                | None                                     |
+	| LCHIJA | immersivetech            | 1.3.10                   | immersivetech-1.12-1.3.10.jar                      | None                                     |
+	| LCHIJA | improvedbackpacks        | 1.12.2-1.5.0.0           | ImprovedBackpacks-1.12.2-1.5.0.0.jar               | None                                     |
+	| LCHIJA | incontrol                | 3.9.16                   | incontrol-1.12-3.9.16.jar                          | None                                     |
+	| LCHIJA | indlog                   | 1.3.4                    | InductiveLogistics-1.12.2-1.3.4.jar                | None                                     |
+	| LCHIJA | teslacorelib             | 1.0.15                   | tesla-core-lib-1.12.2-1.0.15.jar                   | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | industrialforegoing      | 1.12.2-1.12.2            | industrialforegoing-1.12.2-1.12.13-237.jar         | None                                     |
+	| LCHIJA | infoaccessories          | 1.0.11                   | InfoAccessories-1.12.2-1.0.11.jar                  | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | integrateddynamics       | 1.0.14                   | IntegratedDynamics-1.12.2-1.0.14.jar               | bd0353b3e8a2810d60dd584e256e364bc3bedd44 |
+	| LCHIJA | integrateddynamicscompat | 1.0.0                    | IntegratedDynamics-1.12.2-1.0.14.jar               | None                                     |
+	| LCHIJA | inventorytweaks          | 1.64+dev.151.822d839     | InventoryTweaks-1.64+dev.151.jar                   | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+	| LCHIJA | ironbackpacks            | 1.12.2-3.0.8-12          | IronBackpacks-1.12.2-3.0.8-12.jar                  | None                                     |
+	| LCHIJA | ironchest                | 1.12.2-7.0.67.844        | ironchest-1.12.2-7.0.72.847.jar                    | None                                     |
+	| LCHIJA | ironjetpacks             | 1.1.0                    | IronJetpacks-1.12-2-1.1.0.jar                      | None                                     |
+	| LCHIJA | itemstages               | 2.0.49                   | ItemStages-1.12.2-2.0.49.jar                       | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | journeymap               | 1.12.2-5.5.4             | journeymap-1.12.2-5.5.4.jar                        | None                                     |
+	| LCHIJA | jarm                     | 1.1.2                    | Just A Raft Mod-1.1.2.jar                          | None                                     |
+	| LCHIJA | jaff                     | 1.7_for_1.12             | JustAFewFish-1.7_for_1.12.jar                      | None                                     |
+	| LCHIJA | jeid                     | 1.0.3-55                 | JustEnoughIDs-1.0.3-55.jar                         | None                                     |
+	| LCHIJA | kleeslabs                | 5.4.12                   | KleeSlabs_1.12.2-5.4.12.jar                        | None                                     |
+	| LCHIJA | lex                      | 1.0.8                    | LibEx-1.12.2-1.0.8.jar                             | None                                     |
+	| LCHIJA | lttweaker                | 1.1.14                   | LootTableTweaker-1.12.2-1.1.14.jar                 | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | magma_monsters           | 0.3.0                    | MagmaMonsters-0.3.0.jar                            | None                                     |
+	| LCHIJA | mc2discord               | 0                        | mc2discord-forge-1.12.2-3.2.11.jar                 | None                                     |
+	| LCHIJA | mekatweaks               | 1.0.0-3                  | mekatweaks-1.0.0-3.jar                             | None                                     |
+	| LCHIJA | mercurius                | 1.0.6                    | Mercurius-1.12.2.jar                               | None                                     |
+	| LCHIJA | mobends                  | 0.24                     | mobends-0.24_for_MC-1.12.jar                       | None                                     |
+	| LCHIJA | mob_grinding_utils       | 0.3.13                   | MobGrindingUtils-0.3.13.jar                        | None                                     |
+	| LCHIJA | mobstages                | 2.0.13                   | MobStages-1.12.2-2.0.13.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | modularmachinery         | 1.9.5                    | modularmachinery-1.9.5.jar                         | None                                     |
+	| LCHIJA | morpheus                 | 1.12.2-3.5.106           | Morpheus-1.12.2-3.5.106.jar                        | None                                     |
+	| LCHIJA | mputils                  | 1.5.6                    | MPUtils-1.12.2-1.5.7.jar                           | None                                     |
+	| LCHIJA | mpbasic                  | 1.4.7                    | mpbasic-1.12.2-1.4.11.jar                          | None                                     |
+	| LCHIJA | multiblockstages         | 1.2.0                    | multiblockstages-1.2.0.jar                         | None                                     |
+	| LCHIJA | mundaneredstone          | 1.1.4                    | MundaneRedstone-1.1.4.jar                          | None                                     |
+	| LCHIJA | mysticalagriculture      | 1.7.5                    | MysticalAgriculture-1.12.2-1.7.5.jar               | None                                     |
+	| LCHIJA | mysticalagradditions     | 1.3.2                    | MysticalAgradditions-1.12.2-1.3.2.jar              | None                                     |
+	| LCHIJA | mystagradcompat          | 1.2                      | mystagradcompat-1.2.jar                            | None                                     |
+	| LCHIJA | naturescompass           | 1.5.1                    | NaturesCompass-1.12.2-1.5.1.jar                    | None                                     |
+	| LCHIJA | nex                      | 2.0.8                    | NetherEx-1.12.2-2.0.8.jar                          | None                                     |
+	| LCHIJA | noworldgen5you           | 1.0.6                    | NoWorldgen5You-1.12.2-1.0.6.jar                    | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | nutrition                | 4.3.0                    | Nutrition-1.12.2-4.3.0.jar                         | None                                     |
+	| LCHIJA | samsocean                | 1.0.2                    | OceanFloor-1.12.2-1.0.2.jar                        | None                                     |
+	| LCHIJA | oreexcavation            | 1.4.150                  | OreExcavation-1.4.150.jar                          | None                                     |
+	| LCHIJA | oeintegration            | 2.3.4                    | oeintegration-2.3.4.jar                            | None                                     |
+	| LCHIJA | orestages                | 2.0.37                   | OreStages-1.12.2-2.0.37.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | overloaded               | 0.0.59                   | Overloaded-1.12.2-0.0.59.jar                       | None                                     |
+	| LCHIJA | pickletweaks             | 2.1.3                    | PickleTweaks-1.12.2-2.1.3.jar                      | None                                     |
+	| LCHIJA | placebo                  | 1.6.0                    | Placebo-1.12.2-1.6.0.jar                           | None                                     |
+	| LCHIJA | playerbosses             | 1.0                      | playerbosses-1.12.2-1.1.0.jar                      | 1bc8f8dbe770187a854cef35dad0ff40ba441bbe |
+	| LCHIJA | playerskins              | 1.0.4                    | playerskin-1.12.2-1.0.5.jar                        | None                                     |
+	| LCHIJA | pneumaticcraft           | 1.12.2-0.11.1-361        | pneumaticcraft-repressurized-1.12.2-0.11.1-361.jar | None                                     |
+	| LCHIJA | poweradapters            | 1.0.9                    | PowerAdapters-1.12.2-1.0.9.jar                     | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | prestige                 | 1.1.30                   | Prestige-1.12.2-1.1.30.jar                         | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | primalchests             | 1.0.3                    | PrimalChests-1.0.3.jar                             | None                                     |
+	| LCHIJA | rustic                   | 1.1.4                    | rustic-1.1.4.jar                                   | None                                     |
+	| LCHIJA | thebetweenlands          | 3.5.10                   | TheBetweenlands-3.5.10-universal.jar               | 38067d6878811efb38b6a045521cfd80b9b60b38 |
+	| LCHIJA | primal                   | 0.6.104                  | PrimalCore-1.12.2-0.6.104.jar                      | 67a0e286dc0d4b502f3c92ac20b953517b52d0a9 |
+	| LCHIJA | progressiontweaks        | 1.12.2-0.3.40            | ProgressionTweaks-1.12.2-0.3.40.jar                | None                                     |
+	| LCHIJA | prospectors              | 1.0.2                    | prospectors-1.0.2.jar                              | None                                     |
+	| LCHIJA | reborncore               | 3.19.5                   | RebornCore-1.12.2-3.19.5-universal.jar             | None                                     |
+	| LCHIJA | quantumstorage           | 4.6.8                    | QuantumStorage-1.12-4.6.8.jar                      | None                                     |
+	| LCHIJA | quickleafdecay           | 1.2.4                    | QuickLeafDecay-MC1.12.1-1.2.4.jar                  | None                                     |
+	| LCHIJA | rangedpumps              | 0.5                      | rangedpumps-0.5.jar                                | None                                     |
+	| LCHIJA | realdrops                | 1.2.14                   | RealisticItemDrops-1.2.14.jar                      | None                                     |
+	| LCHIJA | rebornstorage            | 1.0.0                    | RebornStorage-1.12.2-3.3.4.1.jar                   | None                                     |
+	| LCHIJA | recipestages             | 1.1.3                    | RecipeStages-1.1.3.jar                             | None                                     |
+	| LCHIJA | reccomplex               | 1.4.8.2                  | RecurrentComplex-1.4.8.2.jar                       | None                                     |
+	| LCHIJA | refinedstorageaddons     | 0.4.5                    | refinedstorageaddons-0.4.5.jar                     | None                                     |
+	| LCHIJA | rftools                  | 7.73                     | rftools-1.12-7.73.jar                              | None                                     |
+	| LCHIJA | rftoolscontrol           | 2.0.2                    | rftoolsctrl-1.12-2.0.2.jar                         | None                                     |
+	| LCHIJA | roadrunner               | 1.0.1                    | roadrunner-1.0.1.jar                               | None                                     |
+	| LCHIJA | scannable                | 1.6.3.24                 | Scannable-MC1.12.2-1.6.3.24.jar                    | None                                     |
+	| LCHIJA | sevpatches               | 1.9                      | sevpatches-1.9-10.jar                              | None                                     |
+	| LCHIJA | sevtweaks                | 0.4.0-1                  | SevTweaks-0.4.0-1.jar                              | None                                     |
+	| LCHIJA | sev_tweaks_npc           | 0.0.4                    | SevTweaksNPC-0.0.4.jar                             | None                                     |
+	| LCHIJA | simpleautorun            | 1.12.1-1.2               | simpleautorun-1.12.2-1.2.0.jar                     | None                                     |
+	| LCHIJA | simplegenerators         | 1.12.2-2.0.20.2          | simplegenerators-1.12.2-2.0.20.2.jar               | None                                     |
+	| LCHIJA | storagenetwork           | 1.7.11                   | SimpleStorageNetwork-1.12.2-1.7.11.jar             | 0e5cb559be7d03f3fc18b8cba547d663e25f28af |
+	| LCHIJA | simpletomb               | 1.12.2-1.0.0             | simpletomb-1.12.2-1.0.0.jar                        | 0e5cb559be7d03f3fc18b8cba547d663e25f28af |
+	| LCHIJA | simplyarrows             | 1.0.4                    | SimplyArrows-1.12.2-1.0.4.jar                      | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | spartanshields           | 1.5.4                    | SpartanShields-1.12.2-1.5.4.jar                    | None                                     |
+	| LCHIJA | spatialservermod         | 1.3                      | spatialservermod-1.3.jar                           | None                                     |
+	| LCHIJA | stevescarts              | 2.4.32.137               | StevesCarts-1.12.2-2.4.32.137.jar                  | None                                     |
+	| LCHIJA | stg                      | 1.12.2-1.2.3             | stg-1.12.2-1.2.3.jar                               | None                                     |
+	| LCHIJA | storagedrawers           | 5.2.2                    | StorageDrawers-1.12.2-5.4.2.jar                    | None                                     |
+	| LCHIJA | streams                  | 0.4.8                    | Streams-1.12-0.4.8.jar                             | None                                     |
+	| LCHIJA | sasit                    | 1.1.32                   | StuffASockInIt-1.12.2-1.1.32.jar                   | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | supersoundmuffler        | 1.0.2.10                 | supersoundmuffler-revived_1.12.2_1.0.2.10.jar      | None                                     |
+	| LCHIJA | tallgates                | 1.0.0                    | TallGates-1.12.2-1.0.0.1.jar                       | None                                     |
+	| LCHIJA | beneath                  | 1.5.1                    | The Beneath-1.12.2-1.5.1.jar                       | 220f10d3a93b3ff5fbaa7434cc629d863d6751b9 |
+	| LCHIJA | thirstybottles           | 2.0.1                    | ThirstyBottles-1.12.2-2.0.1.jar                    | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | tcomplement              | 1.12.2-0.4.3             | TinkersComplement-1.12.2-0.4.3.jar                 | None                                     |
+	| LCHIJA | tinkerstages             | 2.0.17                   | TinkerStages-1.12.2-2.0.17.jar                     | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | tinkertoolleveling       | 1.12.2-1.1.0.DEV.b23e769 | TinkerToolLeveling-1.12.2-1.1.0.jar                | None                                     |
+	| LCHIJA | togetherforever          | 1.0.2                    | togetherforever-1.12.2-1.0.12-22.jar               | None                                     |
+	| LCHIJA | totemic                  | 1.12.2-0.11.6            | Totemic-1.12.2-0.11.6.jar                          | 21d11d7bf4d97b465382a1f95428029aac6daaea |
+	| LCHIJA | tothebatpoles            | 1.12.2-1.1.0.1           | tothebatpoles-1.12.2-1.1.0.1.jar                   | None                                     |
+	| LCHIJA | translocators            | 2.5.2.81                 | Translocators-1.12.2-2.5.2.81-universal.jar        | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | triumph                  | 3.19.2                   | Triumph-1.12.2-3.19.2.jar                          | None                                     |
+	| LCHIJA | trumpetskeleton          | 1.12-1.0.2.1             | trumpetskeleton-1.12-1.0.2.1.jar                   | None                                     |
+	| LCHIJA | tumbleweed               | 1.12-0.4.7               | tumbleweed-1.12-0.4.7.jar                          | None                                     |
+	| LCHIJA | uppers                   | 0.0.6                    | Uppers-0.0.6.jar                                   | None                                     |
+	| LCHIJA | universalmodifiers       | 1.12.2-1.0.16.1          | valkyrielib-1.12.2-2.0.20.1.jar                    | None                                     |
+	| LCHIJA | vc                       | 5.9.16                   | ViesCraft-1.12.2-5.9.16.jar                        | None                                     |
+	| LCHIJA | vtt                      | 0.6.4                    | VillagerTrades-1.12-0.6.4.jar                      | None                                     |
+	| LCHIJA | waddles                  | 0.6.0                    | Waddles-1.12.2-0.6.0.jar                           | None                                     |
+	| LCHIJA | wailastages              | 2.0.23                   | WailaStages-1.12.2-2.0.23.jar                      | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | walljump                 | 1.3.2                    | walljump-1.12.2-1.3.2.jar                          | None                                     |
+	| LCHIJA | wanionlib                | 1.12.2-2.2               | WanionLib-1.12.2-2.2.jar                           | None                                     |
+	| LCHIJA | watercontrolextreme      | 1.0.0                    | WaterControlExtreme-1.0.2.jar                      | None                                     |
+	| LCHIJA | waterstrainer            | 3.2.0                    | WaterStrainer-1.12-3.2.0.jar                       | None                                     |
+	| LCHIJA | wawla                    | 2.6.275                  | Wawla-1.12.2-2.6.275.jar                           | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LCHIJA | weirdinggadget           | 1.0                      | weirdinggadget-1.12.2-2.1.16-universal.jar         | None                                     |
+	| LCHIJA | wildcrops                | 1.0.1                    | WildCrops-1.12-1.0.1.jar                           | None                                     |
+	| LCHIJA | witherskelefix           | 2.6.3                    | WitherSkeletonTweaks-1.12.2-2.6.3.jar              | None                                     |
+	| LCHIJA | wopper                   | 1.12-r5                  | Wopper-1.12-r5.jar                                 | None                                     |
+	| LCHIJA | xnet                     | 1.8.2                    | xnet-1.12-1.8.2.jar                                | None                                     |
+	| LCHIJA | ynot                     | 0.2.4                    | YNot-0.2.4.jar                                     | None                                     |
+	| LCHIJA | yoyos                    | 1.12.2-1.3.0.21          | yoyos_1.12.2-1.3.0.21.jar                          | None                                     |
+	| LCHIJA | zenstages                | 0.5.0-null               | zenstages-0.5.0.jar                                | None                                     |
+	| LCHIJA | zenloot                  | 0.1-1                    | zenloot-0.1-1.jar                                  | None                                     |
+	| LCHIJA | primal_tech              | 0.3.5                    | PrimalTech-0.3.5.jar                               | None                                     |
+	| LCHIJA | teslacorelib_registries  | 1.0.15                   | tesla-core-lib-1.12.2-1.0.15.jar                   | None                                     |
+
+
+	Plugins:
+
+	| State  | ID             | Version    | Source                                         | Signature |
+	|:------ |:-------------- |:---------- |:---------------------------------------------- |:--------- |
+	| LCHIJA | localeapi      | 1.0        | LocaleAPI-1.0.0-S7.1-RELEASE.jar               | None      |
+	| LCHIJA | guishopmanager | 1.0.4-S7.3 | GuiShopManager-1.0.4.jar                       | None      |
+	| LCHIJA | luckperms      | 5.3.98     | LuckPerms-Sponge-5.3.98.jar                    | None      |
+	| LCHIJA | nucleus        | 2.4.2      | Nucleus-2.4.2-MC1.12.2-SpongeAPI7.3-plugin.jar | None      |
+	| LCHIJA | nuvotifier     | 2.7.3      | nuvotifier.jar                                 | None      |
+	| LCHIJA | payday         | 1.4.0      | PayDay-1.4.0.jar                               | None      |
+	| LCHIJA | pieconomy      | 0.6.2      | Pieconomy-0.6.2.jar                            | None      |
+	| LCHIJA | rankupper      | 4.0.5      | RankUpper-4.0.5-b28-Universal.jar              | None      |
+	| LCHIJA | redprotect     | 7.6.7      | RedProtect-7.6.7-b342-Universal.jar            | None      |
+	| LCHIJA | seriousvote    | 4.9.1      | seriousvote-4.9.1.jar                          | None      |
+
+	Loaded coremods (and transformers): 
+Inventory Tweaks Coremod (InventoryTweaks-1.64+dev.151.jar)
+  invtweaks.forge.asm.ContainerTransformer
+FarseekCoreMod (Farseek-1.12-2.5.jar)
+  farseek.core.FarseekClassTransformer
+IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+  blusunrize.immersiveengineering.common.asm.IEClassTransformer
+CorePlugin (SmoothFont-mc1.12.2-2.1.2.jar)
+  bre.smoothfont.asm.Transformer
+MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  mekanism.coremod.KeybindingMigrationHelper
+MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.2.280.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+SpongeCoremod (spongeforge-1.12.2-2838-7.4.8-RC4142.jar)
+  org.spongepowered.common.launch.transformer.SpongeSuperclassTransformer
+TheBetweenlandsLoadingPlugin (TheBetweenlands-3.5.10-core.jar)
+  thebetweenlands.core.TheBetweenlandsClassTransformer
+ForgelinPlugin (Forgelin-1.8.2.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-0.3.3.22.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+LoadingPlugin (BetterWithLib-1.12-1.5.jar)
+  betterwithmods.library.core.ClassTransformer
+BNBGamingCore (BNBGamingCore-1.12.2-0.12.0.jar)
+  com.bloodnbonesgaming.bnbgamingcore.core.BNBGamingCoreClassTransformer
+BetterFoliageLoader (BetterFoliage-MC1.12-2.3.1.jar)
+  mods.betterfoliage.loader.BetterFoliageTransformer
+SevPatches (sevpatches-1.9-10.jar)
+  tv.darkosto.sevpatches.core.SevPatchesTransformer
+Do not report to Forge! (If you haven't disabled the FoamFix coremod, try disabling it in the config! Note that this bit of text will still appear.) (foamfix-0.10.10-1.12.2.jar)
+  pl.asie.foamfix.coremod.FoamFixTransformer
+RandomPatches (randompatches-1.12.2-1.22.0.0.jar)
+  com.therandomlabs.randompatches.core.RPTransformer
+JustEnoughIDs Extension Plugin (JustEnoughIDs-1.0.3-55.jar)
+  org.dimdev.jeid.JEIDTransformer
+LoadingPlugin (ResourceLoader-MC1.12.1-1.5.3.jar)
+  lumien.resourceloader.asm.ClassTransformer
+IvToolkit (IvToolkit-1.3.3-1.12.jar)
+  
+CoreMod (Aroma1997Core-1.12.2-2.0.0.2.jar)
+  
+Quark Plugin (Quark-r1.5-158.jar)
+  vazkii.quark.base.asm.ClassTransformer
+AstralCore (astralsorcery-1.12.2-1.10.21.jar)
+  
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- chiselIntegration (Enabled/Not Forced)
+		- chiselsandbitsIntegration (Enabled/Not Forced)
+		- wailaIntegration (Enabled/Not Forced)
+
+	Pulsar/natura loaded Pulses: 
+		- NaturaCommons (Enabled/Forced)
+		- NaturaOverworld (Enabled/Not Forced)
+		- NaturaNether (Enabled/Not Forced)
+		- NaturaDecorative (Enabled/Not Forced)
+		- NaturaEntities (Enabled/Not Forced)
+		- NaturaOredict (Enabled/Forced)
+		- NaturaWorld (Enabled/Not Forced)
+
+	AE2 Version: stable rv6-stable-7 for Forge 14.23.5.2768
+	Pulsar/tcomplement loaded Pulses: 
+		- ModuleCommons (Enabled/Forced)
+		- ModuleMelter (Enabled/Not Forced)
+		- ModuleArmor (Enabled/Not Forced)
+		- CeramicsPlugin (Enabled/Not Forced)
+		- ChiselPlugin (Enabled/Not Forced)
+		- ToolLevelingPlugin (Enabled/Not Forced)
+		- Oredict (Enabled/Forced)
+
+	List of loaded APIs: 
+		* AbyssalCraftAPI (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Biome (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Block (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Caps (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Condition (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Disruption (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Energy (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Entity (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Event (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Integration (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Internal (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Item (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Necronomicon (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Recipe (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Rending (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Ritual (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Spell (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* AbyssalCraftAPI|Structure (1.29.1) from AbyssalCraft-1.12.2-1.9.19.1.jar
+		* actuallyadditionsapi (34) from ActuallyAdditions-1.12.2-r149.jar
+		* antiqueatlasapi (5.1) from antiqueatlas-1.12.2-4.5.1.jar
+		* appliedenergistics2|API (rv6) from appliedenergistics2-rv6-stable-7.jar
+		* Base|API (1.0.0) from base-1.12.2-3.13.0.jar
+		* Baubles|API (1.4.0.2) from ImprovedBackpacks-1.12.2-1.5.0.0.jar
+		* betteradvancements|API (0.0.11) from Triumph-1.12.2-3.19.2.jar
+		* BetterWithModsAPI (Beta 0.6) from AppleSkin-mc1.12-1.0.14.jar
+		* betterwithmodsAPI (1.12-2.3.20-1027) from BetterWithMods-1.12-2.3.20-1027.jar
+		* BetweenlandsAPI (1.12.9) from TheBetweenlands-3.5.10-universal.jar
+		* bloodmagic-api (2.0.0) from BloodMagic-1.12.2-2.4.1-103.jar
+		* buildcraftapi_blocks (1.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_boards (2.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_core (2.2) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_crops (1.1) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_enums (1.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_events (2.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_facades (1.1) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_filler (5.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_fuels (2.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_gates (4.1) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_items (1.1) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_library (2.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_lists (1.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_power (1.3) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_recipes (3.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_robotics (3.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_statements (1.1) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_tiles (1.2) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_tools (1.0) from buildcraft-core-7.99.24.1.jar
+		* buildcraftapi_transport (5.0) from buildcraft-core-7.99.24.1.jar
+		* Chisel-API (0.0.1) from Chisel-MC1.12.2-0.2.1.35.jar
+		* ChiselAPI|Carving (0.0.1) from Chisel-MC1.12.2-0.2.1.35.jar
+		* ChiselsAndBitsAPI (14.25.0) from chiselsandbits-14.33.jar
+		* commoncapabilities|api (0.0.1) from CommonCapabilities-1.12.2-2.4.1.jar
+		* ctm-api (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
+		* ctm-api-events (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
+		* ctm-api-models (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
+		* ctm-api-textures (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
+		* ctm-api-utils (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
+		* farmingforblockheads|api (1.0) from FarmingForBlockheads_1.12.2-3.1.28.jar
+		* Galacticraft API (1.1) from GalacticraftCore-1.12.2-4.0.2.280.jar
+		* Guide-API|API (2.0.0) from Guide-API-1.12-2.1.8-63.jar
+		* ImmersiveEngineering|API (1.0) from ImmersiveEngineering-0.12-98.jar
+		* ImmersiveEngineering|ImmersiveFluxAPI (1.0) from ImmersiveEngineering-0.12-98.jar
+		* ImprovedBackpacks|API (1.2.0.3) from ImprovedBackpacks-1.12.2-1.5.0.0.jar
+		* industrialforegoingapi (5) from industrialforegoing-1.12.2-1.12.13-237.jar
+		* integrateddynamics|api (0.2.0) from IntegratedDynamics-1.12.2-1.0.14.jar
+		* journeymap|client-api (1.4) from journeymap-1.12.2-5.5.4.jar
+		* journeymap|client-api-display (1.4) from journeymap-1.12.2-5.5.4.jar
+		* journeymap|client-api-event (1.4) from journeymap-1.12.2-5.5.4.jar
+		* journeymap|client-api-model (1.4) from journeymap-1.12.2-5.5.4.jar
+		* journeymap|client-api-util (1.4) from journeymap-1.12.2-5.5.4.jar
+		* JustEnoughItemsAPI (4.13.0) from jei_1.12.2-4.15.0.283.jar
+		* MekanismAPI|core (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|energy (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|gas (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|infuse (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|laser (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|transmitter (9.8.1) from Mekanism-1.12.2-9.8.3.390.jar
+		* MekanismAPI|util (9.0.0) from Mekanism-1.12.2-9.8.3.390.jar
+		* MouseTweaks|API (1.0) from MouseTweaks-2.10-mc1.12.2.jar
+		* PneumaticCraftApi (1.1) from pneumaticcraft-repressurized-1.12.2-0.11.1-361.jar
+		* QuarkAPI (4) from Quark-r1.5-158.jar
+		* reborncoreAPI (3.19.5) from RebornCore-1.12.2-3.19.5-universal.jar
+		* reborncoreAPI|Power (3.19.5) from RebornCore-1.12.2-3.19.5-universal.jar
+		* reborncoreAPI|Recipe (3.19.5) from RebornCore-1.12.2-3.19.5-universal.jar
+		* reborncoreAPI|Tile (3.19.5) from RebornCore-1.12.2-3.19.5-universal.jar
+		* redstonefluxapi (2.1.0) from RedstoneFlux-1.12-2.1.0.6-universal.jar
+		* stevescartsAPI (${version}) from StevesCarts-1.12.2-2.4.32.137.jar
+		* stevescartsAPI|FARMS (${version}) from StevesCarts-1.12.2-2.4.32.137.jar
+		* StorageDrawersAPI (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* StorageDrawersAPI|event (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* StorageDrawersAPI|registry (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* StorageDrawersAPI|render (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* StorageDrawersAPI|storage (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* StorageDrawersAPI|storage-attribute (2.1.0) from StorageDrawers-1.12.2-5.4.2.jar
+		* team_reborn|Praescriptum (3.19.5) from RebornCore-1.12.2-3.19.5-universal.jar
+		* togetherforeverapi (1) from togetherforever-1.12.2-1.0.12-22.jar
+		* totemic|API (1.12.2-7.1.0) from Totemic-1.12.2-0.11.6.jar
+		* valkyrielib.api (1.12.2-2.0.10a) from valkyrielib-1.12.2-2.0.20.1.jar
+		* WailaAPI (1.3) from Hwyla-1.8.26-B41_1.12.2.jar
+	RebornCore: 
+		Plugin Engine: 1
+		RebornCore Version: 3.19.5
+		Runtime Debofucsation 1
+		Invalid fingerprint detected for RebornCore!
+	SevTech: Ages: 
+		Version: 3.2.1
+		Optifine Installed: False
+	AE2 Integration: IC2:OFF, RC:OFF, MFR:OFF, Waila:ON, Mekanism:OFF, OpenComputers:OFF, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:ON
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 10; [EntityPlayerMP['Kwando'/645, l='world', x=924.45, y=144.63, z=-25.51]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge,sponge'
+	Type: Dedicated Server (map_server.txt)
