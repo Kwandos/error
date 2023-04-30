@@ -25,9 +25,9 @@ WARNING: coremods are present:
   AstralCore (astralsorcery-1.12.2-1.10.21.jar)
 Contact their authors BEFORE contacting forge
 
-// You should try our sister game, Minceraft!
+// Oops.
 
-Time: 4/30/23 8:43 AM
+Time: 4/30/23 8:51 AM
 Description: Watching Server
 
 java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.00 seconds (should be max 0.05)
@@ -49,11 +49,11 @@ java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.0
 	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getRegions(WorldMySQLRegionManager.java:646)
 	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getTopRegion(WorldMySQLRegionManager.java:664)
 	at br.net.fabiozumbi12.RedProtect.Sponge.region.RegionManager.getTopRegion(RegionManager.java:287)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener.lambda$onFlow$1(GlobalListener.java:252)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener$$Lambda$7166/448659003.accept(Unknown Source)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.lambda$onFlow$0(BlockListener.java:422)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener$$Lambda$7161/755668599.accept(Unknown Source)
 	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:408)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener.onFlow(GlobalListener.java:251)
-	at org.spongepowered.common.event.listener.PreListener_GlobalListener_onFlow177.handle(Unknown Source)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.onFlow(BlockListener.java:421)
+	at org.spongepowered.common.event.listener.PreListener_BlockListener_onFlow150.handle(Unknown Source)
 	at org.spongepowered.common.event.RegisteredListener.handle(RegisteredListener.java:97)
 	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:383)
 	at org.spongepowered.mod.event.SpongeModEventManager.extendedPost(SpongeModEventManager.java:458)
@@ -62,12 +62,13 @@ java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.0
 	at org.spongepowered.common.SpongeImpl.postEvent(SpongeImpl.java:249)
 	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:603)
 	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:555)
-	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreOnUpdate(BlockDynamicLiquid.java:577)
-	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java)
-	at net.minecraft.block.Block.func_180645_a(Block.java:508)
-	at org.spongepowered.common.event.tracking.TrackingUtil.randomTickBlock(TrackingUtil.java:310)
-	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:3815)
-	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:225)
+	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreForFlowingInto(BlockDynamicLiquid.java:568)
+	at net.minecraft.block.BlockDynamicLiquid.func_176373_h(BlockDynamicLiquid.java)
+	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java:118)
+	at org.spongepowered.common.event.tracking.TrackingUtil.updateTickBlock(TrackingUtil.java:276)
+	at net.minecraft.world.WorldServer.redirect$zmh000$onUpdateTick(WorldServer.java:3949)
+	at net.minecraft.world.WorldServer.func_72955_a(WorldServer.java:737)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:223)
 	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
 	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
 	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
@@ -99,11 +100,11 @@ Stacktrace:
 	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getRegions(WorldMySQLRegionManager.java:646)
 	at br.net.fabiozumbi12.RedProtect.Sponge.database.WorldMySQLRegionManager.getTopRegion(WorldMySQLRegionManager.java:664)
 	at br.net.fabiozumbi12.RedProtect.Sponge.region.RegionManager.getTopRegion(RegionManager.java:287)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener.lambda$onFlow$1(GlobalListener.java:252)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener$$Lambda$7166/448659003.accept(Unknown Source)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.lambda$onFlow$0(BlockListener.java:422)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener$$Lambda$7161/755668599.accept(Unknown Source)
 	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:408)
-	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.GlobalListener.onFlow(GlobalListener.java:251)
-	at org.spongepowered.common.event.listener.PreListener_GlobalListener_onFlow177.handle(Unknown Source)
+	at br.net.fabiozumbi12.RedProtect.Sponge.listeners.BlockListener.onFlow(BlockListener.java:421)
+	at org.spongepowered.common.event.listener.PreListener_BlockListener_onFlow150.handle(Unknown Source)
 	at org.spongepowered.common.event.RegisteredListener.handle(RegisteredListener.java:97)
 	at org.spongepowered.mod.event.SpongeModEventManager.post(SpongeModEventManager.java:383)
 	at org.spongepowered.mod.event.SpongeModEventManager.extendedPost(SpongeModEventManager.java:458)
@@ -112,29 +113,21 @@ Stacktrace:
 	at org.spongepowered.common.SpongeImpl.postEvent(SpongeImpl.java:249)
 	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:603)
 	at org.spongepowered.common.event.SpongeCommonEventFactory.callChangeBlockEventPre(SpongeCommonEventFactory.java:555)
-	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreOnUpdate(BlockDynamicLiquid.java:577)
-	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java)
-	at net.minecraft.block.Block.func_180645_a(Block.java:508)
-	at org.spongepowered.common.event.tracking.TrackingUtil.randomTickBlock(TrackingUtil.java:310)
-	at net.minecraft.world.WorldServer.func_147456_g(WorldServer.java:3815)
-	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:225)
+	at net.minecraft.block.BlockDynamicLiquid.handler$zcp000$impl$throwPreForFlowingInto(BlockDynamicLiquid.java:568)
+	at net.minecraft.block.BlockDynamicLiquid.func_176373_h(BlockDynamicLiquid.java)
+	at net.minecraft.block.BlockDynamicLiquid.func_180650_b(BlockDynamicLiquid.java:118)
+	at org.spongepowered.common.event.tracking.TrackingUtil.updateTickBlock(TrackingUtil.java:276)
+	at net.minecraft.world.WorldServer.redirect$zmh000$onUpdateTick(WorldServer.java:3949)
+	at net.minecraft.world.WorldServer.func_72955_a(WorldServer.java:737)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:223)
 
 -- Sponge PhaseTracker --
 Details:
-	Phase Stack: /************************************************************************************************************************************/
-/*   - Phase: General{Unwinding}                                                                                                    */
-/*     Context:                                                                                                                     */
-/*     - Source: SpongeLocatableBlock{blockState=minecraft:flowing_lava[level=0], position=(791, 6, 281), worldReference=world}     */
-/*     - UnwindingState: Tick{Block:RandomBlockTickPhase}                                                                           */
-/*     - UnwindingContext: BlockTickContext{isCompleted=true}                                                                       */
-/*     - IsPostingSpecial: false                                                                                                    */
-/*         - Source: SpongeLocatableBlock{blockState=minecraft:flowing_lava[level=0], position=(791, 6, 281), worldReference=world} */
-/*         - CapturedBlocks: MultiBlockCaptureSupplier{Captured=0, Head=ChangeBlock{}}                                              */
-/*   - Phase: Tick{Block:RandomBlockTickPhase}                                                                                      */
-/*     Context:                                                                                                                     */
-/*     - Source: SpongeLocatableBlock{blockState=minecraft:flowing_lava[level=0], position=(791, 6, 281), worldReference=world}     */
-/*     - CapturedBlocks: MultiBlockCaptureSupplier{Captured=0, Head=ChangeBlock{}}                                                  */
-/************************************************************************************************************************************/
+	Phase Stack: /*******************************************************************************************************************************/
+/*   - Phase: Tick{Block:BlockTickPhase}                                                                                       */
+/*     Context:                                                                                                                */
+/*     - Source: SpongeLocatableBlock{blockState=minecraft:flowing_lava[level=0], position=(962, 9, 88), worldReference=world} */
+/*******************************************************************************************************************************/
 
 Stacktrace:
 	at net.minecraft.server.MinecraftServer.handler$zkb000$onCrashReport(MinecraftServer.java:4687)
@@ -145,9 +138,9 @@ Stacktrace:
 
 -- Thread Dump --
 Details:
-	Threads: "d4j-parallel-1-22" Id=233 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@510d4f36
+	Threads: "d4j-parallel-1-24" Id=229 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3607014b
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@510d4f36
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3607014b
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -158,9 +151,9 @@ Details:
 	...
 
 
-"parallel-21" Id=232 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5fcaab67
+"parallel-23" Id=228 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@38c0f9fb
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5fcaab67
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@38c0f9fb
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -171,9 +164,196 @@ Details:
 	...
 
 
-"pool-2-thread-18" Id=231 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+"d4j-parallel-1-22" Id=227 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3cff6a3b
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3cff6a3b
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-21" Id=226 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@79fdf3c0
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@79fdf3c0
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-20" Id=225 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@77feb8ed
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@77feb8ed
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-19" Id=224 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@484e88c8
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@484e88c8
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"parallel-18" Id=223 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@fa79d48
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@fa79d48
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Sponge - Async Light Thread" Id=222 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@19d20c8f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@19d20c8f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Sponge - Async Light Thread" Id=221 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@19d20c8f
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@19d20c8f
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"d4j-parallel-1-17" Id=220 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1be9e688
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1be9e688
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-16" Id=219 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@27dd25f5
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@27dd25f5
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-15" Id=218 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@14a3b19b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@14a3b19b
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Chunk I/O Executor Thread-1" Id=217 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1d9c71f4
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1d9c71f4
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #5" Id=213 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #4" Id=212 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #3" Id=211 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"File IO Thread" Id=210 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"d4j-parallel-1-14" Id=209 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@49151969
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@49151969
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-15" Id=208 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
 	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
@@ -184,9 +364,22 @@ Details:
 	...
 
 
-"d4j-parallel-1-20" Id=230 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ef7a15c
+"pool-2-thread-12" Id=205 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ef7a15c
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-13" Id=204 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e0f3924
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e0f3924
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -197,9 +390,9 @@ Details:
 	...
 
 
-"parallel-19" Id=229 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2538294b
+"d4j-parallel-1-12" Id=203 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7062fac0
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2538294b
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7062fac0
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -210,9 +403,9 @@ Details:
 	...
 
 
-"d4j-parallel-1-18" Id=228 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2fa33f18
+"d4j-parallel-1-11" Id=202 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11dd7bf4
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2fa33f18
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11dd7bf4
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -223,166 +416,218 @@ Details:
 	...
 
 
-"parallel-17" Id=227 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5d86e9be
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5d86e9be
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"File IO Thread" Id=226 TIMED_WAITING
-	at java.lang.Thread.sleep(Native Method)
-	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
-	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"Sponge - Async Light Thread" Id=225 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ed85e13
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ed85e13
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"Sponge - Async Light Thread" Id=224 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ed85e13
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ed85e13
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"d4j-parallel-1-16" Id=223 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ace42f2
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ace42f2
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-15" Id=221 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2c23f54c
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2c23f54c
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-14" Id=220 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4682226f
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4682226f
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"Chunk I/O Executor Thread-1" Id=219 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7a96c46a
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7a96c46a
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"Netty Epoll Server IO #3" Id=215 RUNNABLE
-	at io.netty.channel.epoll.Native.epollWait0(Native Method)
-	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
-	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
-	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"Netty Epoll Server IO #2" Id=214 RUNNABLE
-	at io.netty.channel.epoll.Native.epollWait0(Native Method)
-	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
-	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
-	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"d4j-parallel-1-13" Id=213 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@12a7c018
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@12a7c018
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-12" Id=212 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@211dce95
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@211dce95
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-11" Id=211 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@76db1183
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@76db1183
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"Timer-3" Id=207 TIMED_WAITING on java.util.TaskQueue@3aa22ea6
+"Timer-3" Id=198 TIMED_WAITING on java.util.TaskQueue@5d414e1b
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@3aa22ea6
+	-  waiting on java.util.TaskQueue@5d414e1b
 	at java.util.TimerThread.mainLoop(Timer.java:552)
 	at java.util.TimerThread.run(Timer.java:505)
 
 
-"Votifier epoll boss" Id=206 RUNNABLE (in native)
+"d4j-events-4" Id=197 TIMED_WAITING on java.util.concurrent.ForkJoinPool@2af09a8e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2af09a8e
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-events-3" Id=196 WAITING on java.util.concurrent.ForkJoinPool@2af09a8e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2af09a8e
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-parallel-1-10" Id=195 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4d23d1ea
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4d23d1ea
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-9" Id=194 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@37db0161
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@37db0161
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-gateway-3" Id=193 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@60bdb017
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@60bdb017
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"parallel-8" Id=192 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e376264
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4e376264
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-7" Id=191 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1dc846c9
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1dc846c9
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Timer-2" Id=190 TIMED_WAITING on java.util.TaskQueue@72779c18
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@72779c18
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"d4j-events-2" Id=189 WAITING on java.util.concurrent.ForkJoinPool@2af09a8e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2af09a8e
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-events-1" Id=188 WAITING on java.util.concurrent.ForkJoinPool@2af09a8e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2af09a8e
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"d4j-parallel-1-6" Id=187 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7f47a749
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7f47a749
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-limiter-2" Id=186 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@a96ce87
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@a96ce87
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Netty Epoll Server IO #2" Id=185 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"d4j-parallel-1-5" Id=184 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@55372f12
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@55372f12
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-4" Id=183 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1b6efef0
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1b6efef0
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-3" Id=182 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@59516f3b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@59516f3b
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"d4j-parallel-1-2" Id=181 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@658f7060
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@658f7060
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"boundedElastic-1" Id=180 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9ac8c7c
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9ac8c7c
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"Votifier epoll boss" Id=179 RUNNABLE (in native)
 	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native Method)
 	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native.java:148)
 	at com.vexsoftware.votifier.io.netty.channel.epoll.Native.epollWait(Native.java:141)
@@ -394,17 +639,489 @@ Details:
 	...
 
 
-"d4j-events-3" Id=204 WAITING on java.util.concurrent.ForkJoinPool@16a98eea
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@16a98eea
-	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-32" Id=178 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@65596ac7
+	-  locked java.util.Collections$UnmodifiableSet@37a3f9e0
+	-  locked sun.nio.ch.EPollSelectorImpl@4549349c
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
 
 
-"d4j-parallel-1-10" Id=203 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@598f93cc
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-31" Id=177 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@29b19304
+	-  locked java.util.Collections$UnmodifiableSet@44132522
+	-  locked sun.nio.ch.EPollSelectorImpl@6805244c
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-30" Id=176 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6ab26035
+	-  locked java.util.Collections$UnmodifiableSet@4276f87a
+	-  locked sun.nio.ch.EPollSelectorImpl@6aefa02a
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-29" Id=175 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@677a7a83
+	-  locked java.util.Collections$UnmodifiableSet@3a1d697b
+	-  locked sun.nio.ch.EPollSelectorImpl@5d1e723f
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-28" Id=174 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@435705c5
+	-  locked java.util.Collections$UnmodifiableSet@369790fd
+	-  locked sun.nio.ch.EPollSelectorImpl@2d800c3c
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-27" Id=173 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@20d5ace
+	-  locked java.util.Collections$UnmodifiableSet@530abd45
+	-  locked sun.nio.ch.EPollSelectorImpl@13e2214a
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-26" Id=172 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2888e3cc
+	-  locked java.util.Collections$UnmodifiableSet@22129e58
+	-  locked sun.nio.ch.EPollSelectorImpl@69fbc7b9
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-25" Id=171 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4aa16bfe
+	-  locked java.util.Collections$UnmodifiableSet@4c47177a
+	-  locked sun.nio.ch.EPollSelectorImpl@49473536
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-24" Id=170 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@233e0bbd
+	-  locked java.util.Collections$UnmodifiableSet@1568a1dc
+	-  locked sun.nio.ch.EPollSelectorImpl@27033bf9
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-23" Id=169 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@54d7c614
+	-  locked java.util.Collections$UnmodifiableSet@205ff733
+	-  locked sun.nio.ch.EPollSelectorImpl@5725b8d4
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-22" Id=168 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@736f7366
+	-  locked java.util.Collections$UnmodifiableSet@23595a96
+	-  locked sun.nio.ch.EPollSelectorImpl@1726e740
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-21" Id=167 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4954df8f
+	-  locked java.util.Collections$UnmodifiableSet@166d4ff9
+	-  locked sun.nio.ch.EPollSelectorImpl@1cee489f
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-20" Id=166 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1e91fa11
+	-  locked java.util.Collections$UnmodifiableSet@77f59ebf
+	-  locked sun.nio.ch.EPollSelectorImpl@7aeff06
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-19" Id=165 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@18328f69
+	-  locked java.util.Collections$UnmodifiableSet@645c0911
+	-  locked sun.nio.ch.EPollSelectorImpl@47b0fe7e
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-18" Id=164 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@758c26f9
+	-  locked java.util.Collections$UnmodifiableSet@2ed74e91
+	-  locked sun.nio.ch.EPollSelectorImpl@5f7a973d
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-17" Id=163 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2292c5e5
+	-  locked java.util.Collections$UnmodifiableSet@26825427
+	-  locked sun.nio.ch.EPollSelectorImpl@40bb6c00
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-16" Id=162 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@322d05e0
+	-  locked java.util.Collections$UnmodifiableSet@261a66f2
+	-  locked sun.nio.ch.EPollSelectorImpl@64a48f49
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-15" Id=161 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@12132239
+	-  locked java.util.Collections$UnmodifiableSet@26046f30
+	-  locked sun.nio.ch.EPollSelectorImpl@ed2c00c
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-14" Id=160 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@7c5c6c15
+	-  locked java.util.Collections$UnmodifiableSet@904b89a
+	-  locked sun.nio.ch.EPollSelectorImpl@bf29587
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-13" Id=159 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@28d5169
+	-  locked java.util.Collections$UnmodifiableSet@7f5d3e7
+	-  locked sun.nio.ch.EPollSelectorImpl@58df8c99
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-12" Id=158 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@18563bc8
+	-  locked java.util.Collections$UnmodifiableSet@34ba9030
+	-  locked sun.nio.ch.EPollSelectorImpl@3f4aaadd
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-11" Id=157 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@5c5489d7
+	-  locked java.util.Collections$UnmodifiableSet@75171351
+	-  locked sun.nio.ch.EPollSelectorImpl@6b2dd104
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-10" Id=156 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@5c36fe40
+	-  locked java.util.Collections$UnmodifiableSet@3ceddee6
+	-  locked sun.nio.ch.EPollSelectorImpl@3a5d2469
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-9" Id=155 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@448fe29d
+	-  locked java.util.Collections$UnmodifiableSet@94fecc6
+	-  locked sun.nio.ch.EPollSelectorImpl@2ee9237e
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-8" Id=154 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6260c751
+	-  locked java.util.Collections$UnmodifiableSet@30a83f15
+	-  locked sun.nio.ch.EPollSelectorImpl@10589d69
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-7" Id=153 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@b88b897
+	-  locked java.util.Collections$UnmodifiableSet@7d574cfc
+	-  locked sun.nio.ch.EPollSelectorImpl@267eebe5
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-6" Id=152 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@19694648
+	-  locked java.util.Collections$UnmodifiableSet@68c892e7
+	-  locked sun.nio.ch.EPollSelectorImpl@2f3762e8
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-5" Id=151 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@26cad369
+	-  locked java.util.Collections$UnmodifiableSet@61bd4be0
+	-  locked sun.nio.ch.EPollSelectorImpl@cd64b2f
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-4" Id=150 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@32351a99
+	-  locked java.util.Collections$UnmodifiableSet@1e46f992
+	-  locked sun.nio.ch.EPollSelectorImpl@1d457ab1
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-3" Id=149 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6e6720a8
+	-  locked java.util.Collections$UnmodifiableSet@650e94cf
+	-  locked sun.nio.ch.EPollSelectorImpl@226574a7
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-2" Id=148 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@7ff5ab25
+	-  locked java.util.Collections$UnmodifiableSet@56d64720
+	-  locked sun.nio.ch.EPollSelectorImpl@39534227
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+	...
+
+
+"ml.denisd3d.mc2discord.repack.reactor-http-nio-1" Id=147 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1635f32
+	-  locked java.util.Collections$UnmodifiableSet@10da1b3d
+	-  locked sun.nio.ch.EPollSelectorImpl@12114b8a
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:817)
+	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	...
+
+
+"d4j-parallel-1-1" Id=146 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@42a43680
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@598f93cc
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@42a43680
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -415,9 +1132,9 @@ Details:
 	...
 
 
-"d4j-parallel-1-9" Id=202 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@77f6d677
+"d4j-limiter-1" Id=144 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@262f86b3
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@77f6d677
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@262f86b3
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -428,97 +1145,9 @@ Details:
 	...
 
 
-"d4j-gateway-3" Id=201 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5c0a0131
+"HikariPool-1 housekeeper" Id=143 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3daec78b
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5c0a0131
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"parallel-8" Id=200 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@60e1a84
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@60e1a84
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-7" Id=199 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@23baf87a
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@23baf87a
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"Timer-2" Id=198 TIMED_WAITING on java.util.TaskQueue@62bec714
-	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@62bec714
-	at java.util.TimerThread.mainLoop(Timer.java:552)
-	at java.util.TimerThread.run(Timer.java:505)
-
-
-"d4j-events-2" Id=197 TIMED_WAITING on java.util.concurrent.ForkJoinPool@16a98eea
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@16a98eea
-	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-
-
-"d4j-events-1" Id=196 WAITING on java.util.concurrent.ForkJoinPool@16a98eea
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@16a98eea
-	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-
-
-"d4j-parallel-1-6" Id=195 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6e3151fb
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6e3151fb
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-limiter-2" Id=194 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@189dbc83
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@189dbc83
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-5" Id=193 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6c90eec2
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6c90eec2
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3daec78b
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -529,573 +1158,15 @@ Details:
 	...
 
 
-"d4j-parallel-1-4" Id=192 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@78020223
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@78020223
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-3" Id=191 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1c583a51
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1c583a51
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-parallel-1-2" Id=190 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@69d4f4fd
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@69d4f4fd
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-32" Id=188 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2d9e1fb
-	-  locked java.util.Collections$UnmodifiableSet@6aa2f899
-	-  locked sun.nio.ch.EPollSelectorImpl@58e8da02
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-31" Id=187 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@3775dd2e
-	-  locked java.util.Collections$UnmodifiableSet@79c8a421
-	-  locked sun.nio.ch.EPollSelectorImpl@440d17c2
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-30" Id=186 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@345344da
-	-  locked java.util.Collections$UnmodifiableSet@49c814f9
-	-  locked sun.nio.ch.EPollSelectorImpl@ade59e4
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-29" Id=185 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@504d3c43
-	-  locked java.util.Collections$UnmodifiableSet@6c9863c7
-	-  locked sun.nio.ch.EPollSelectorImpl@590d42a2
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-28" Id=184 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@42439f1a
-	-  locked java.util.Collections$UnmodifiableSet@4ba52477
-	-  locked sun.nio.ch.EPollSelectorImpl@4a5ad47d
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-27" Id=183 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@72b3b664
-	-  locked java.util.Collections$UnmodifiableSet@5d1a65ae
-	-  locked sun.nio.ch.EPollSelectorImpl@bc8aaaf
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-26" Id=182 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@3ff9a58
-	-  locked java.util.Collections$UnmodifiableSet@619b80cc
-	-  locked sun.nio.ch.EPollSelectorImpl@6ac728f7
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-25" Id=181 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@e740a0d
-	-  locked java.util.Collections$UnmodifiableSet@cd2978
-	-  locked sun.nio.ch.EPollSelectorImpl@465ab3df
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-24" Id=180 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@7f1f4e63
-	-  locked java.util.Collections$UnmodifiableSet@42bf3cac
-	-  locked sun.nio.ch.EPollSelectorImpl@79f71487
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-23" Id=179 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@6c357294
-	-  locked java.util.Collections$UnmodifiableSet@55a0083
-	-  locked sun.nio.ch.EPollSelectorImpl@6e21e9e1
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-22" Id=178 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@b33a1d
-	-  locked java.util.Collections$UnmodifiableSet@3b522cfb
-	-  locked sun.nio.ch.EPollSelectorImpl@15e72ac1
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-21" Id=177 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@7cb458d7
-	-  locked java.util.Collections$UnmodifiableSet@293f11da
-	-  locked sun.nio.ch.EPollSelectorImpl@3940da5c
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-20" Id=176 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@3045b532
-	-  locked java.util.Collections$UnmodifiableSet@1ada6235
-	-  locked sun.nio.ch.EPollSelectorImpl@7a8da993
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-19" Id=175 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4476f359
-	-  locked java.util.Collections$UnmodifiableSet@15969bcc
-	-  locked sun.nio.ch.EPollSelectorImpl@285a7ce0
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-18" Id=174 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@8e74069
-	-  locked java.util.Collections$UnmodifiableSet@41e5408a
-	-  locked sun.nio.ch.EPollSelectorImpl@452d34c9
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-17" Id=173 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@327a8fd4
-	-  locked java.util.Collections$UnmodifiableSet@13132aac
-	-  locked sun.nio.ch.EPollSelectorImpl@2f1d926c
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-16" Id=172 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@21c5d4af
-	-  locked java.util.Collections$UnmodifiableSet@4acf310d
-	-  locked sun.nio.ch.EPollSelectorImpl@13682dbd
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-15" Id=171 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2cad13af
-	-  locked java.util.Collections$UnmodifiableSet@26e11adc
-	-  locked sun.nio.ch.EPollSelectorImpl@2ec86a56
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-14" Id=170 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@290ed203
-	-  locked java.util.Collections$UnmodifiableSet@1a7ad976
-	-  locked sun.nio.ch.EPollSelectorImpl@7253112f
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-13" Id=169 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@5e0e91fd
-	-  locked java.util.Collections$UnmodifiableSet@7017471a
-	-  locked sun.nio.ch.EPollSelectorImpl@656b2458
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-12" Id=168 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@2f560dd1
-	-  locked java.util.Collections$UnmodifiableSet@63abd024
-	-  locked sun.nio.ch.EPollSelectorImpl@2ca227fd
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-11" Id=167 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@498024d5
-	-  locked java.util.Collections$UnmodifiableSet@3e58568
-	-  locked sun.nio.ch.EPollSelectorImpl@65973a01
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-10" Id=166 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1c422840
-	-  locked java.util.Collections$UnmodifiableSet@2155f11c
-	-  locked sun.nio.ch.EPollSelectorImpl@5c9976cc
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-9" Id=165 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@693bdf6f
-	-  locked java.util.Collections$UnmodifiableSet@465ac9e5
-	-  locked sun.nio.ch.EPollSelectorImpl@60753eb7
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-8" Id=164 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4b57e946
-	-  locked java.util.Collections$UnmodifiableSet@45042c21
-	-  locked sun.nio.ch.EPollSelectorImpl@62d57523
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-7" Id=163 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@72f35349
-	-  locked java.util.Collections$UnmodifiableSet@6276b913
-	-  locked sun.nio.ch.EPollSelectorImpl@293210be
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-6" Id=162 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@169f71c2
-	-  locked java.util.Collections$UnmodifiableSet@721e2214
-	-  locked sun.nio.ch.EPollSelectorImpl@4b70cf1
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-5" Id=161 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@1a1f5e05
-	-  locked java.util.Collections$UnmodifiableSet@4d76c274
-	-  locked sun.nio.ch.EPollSelectorImpl@5bcb2d3b
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-4" Id=160 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@200aab79
-	-  locked java.util.Collections$UnmodifiableSet@238733ee
-	-  locked sun.nio.ch.EPollSelectorImpl@148bf4f7
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-3" Id=159 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4388aeed
-	-  locked java.util.Collections$UnmodifiableSet@3896b18a
-	-  locked sun.nio.ch.EPollSelectorImpl@534fccfd
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-2" Id=158 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@4d329482
-	-  locked java.util.Collections$UnmodifiableSet@5730c689
-	-  locked sun.nio.ch.EPollSelectorImpl@d6a593a
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"ml.denisd3d.mc2discord.repack.reactor-http-nio-1" Id=157 RUNNABLE (in native)
-	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
-	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
-	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
-	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
-	-  locked ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySet@5149f544
-	-  locked java.util.Collections$UnmodifiableSet@5c5e1406
-	-  locked sun.nio.ch.EPollSelectorImpl@6cfa4826
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
-	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
-	at ml.denisd3d.mc2discord.repack.io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
-	...
-
-
-"d4j-parallel-1-1" Id=156 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5111d8b
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5111d8b
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"d4j-limiter-1" Id=155 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@54c4972e
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@54c4972e
-	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"HikariPool-1 housekeeper" Id=153 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4ab9bb27
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4ab9bb27
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"MVStore background writer nio:/AMP/Minecraft/config/rankupper/playerstats.db.mv.db" Id=151 TIMED_WAITING on java.lang.Object@666b6852
+"MVStore background writer nio:/AMP/Minecraft/config/rankupper/playerstats.db.mv.db" Id=141 TIMED_WAITING on java.lang.Object@7d6d20f0
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.lang.Object@666b6852
+	-  waiting on java.lang.Object@7d6d20f0
 	at org.h2.mvstore.MVStore$BackgroundWriterThread.run(MVStore.java:2715)
 
 
-"boundedElastic-evictor-1" Id=149 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6b1bdc51
+"boundedElastic-evictor-1" Id=139 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1e9e09eb
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6b1bdc51
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1e9e09eb
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -1106,14 +1177,14 @@ Details:
 	...
 
 
-"threadDeathWatcher-2-1" Id=147 TIMED_WAITING
+"threadDeathWatcher-2-1" Id=137 TIMED_WAITING
 	at java.lang.Thread.sleep(Native Method)
 	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Netty Epoll Server IO #1" Id=146 RUNNABLE (in native)
+"Netty Epoll Server IO #1" Id=136 RUNNABLE (in native)
 	at io.netty.channel.epoll.Native.epollWait0(Native Method)
 	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
 	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
@@ -1122,9 +1193,9 @@ Details:
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Mc2Discord" Id=145 WAITING on java.util.concurrent.CountDownLatch$Sync@1b965bfb
+"Mc2Discord" Id=135 WAITING on java.util.concurrent.CountDownLatch$Sync@445e1e95
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.CountDownLatch$Sync@1b965bfb
+	-  waiting on java.util.concurrent.CountDownLatch$Sync@445e1e95
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
@@ -1135,14 +1206,14 @@ Details:
 	...
 
 
-"Thread-15" Id=143 RUNNABLE (in native)
+"Thread-15" Id=133 RUNNABLE (in native)
 	at sun.nio.fs.LinuxWatchService.poll(Native Method)
 	at sun.nio.fs.LinuxWatchService.access$600(LinuxWatchService.java:47)
 	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:314)
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Server Watchdog" Id=142 RUNNABLE
+"Server Watchdog" Id=132 RUNNABLE
 	at sun.management.ThreadImpl.dumpThreads0(Native Method)
 	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:496)
 	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:484)
@@ -1150,87 +1221,35 @@ Details:
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Query Listener #1" Id=141 RUNNABLE
+"Query Listener #1" Id=131 RUNNABLE (in native)
 	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
-	-  locked java.net.PlainDatagramSocketImpl@1c71bb2d
+	-  locked java.net.PlainDatagramSocketImpl@f071b0a
 	at java.net.DatagramSocket.receive(DatagramSocket.java:743)
-	-  locked java.net.DatagramPacket@21657909
-	-  locked java.net.DatagramSocket@6a1ac00e
+	-  locked java.net.DatagramPacket@1b79c0ba
+	-  locked java.net.DatagramSocket@2b3d0c5d
 	at net.minecraft.network.rcon.RConThreadQuery.run(SourceFile:269)
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Java2D Disposer" Id=139 WAITING on java.lang.ref.ReferenceQueue$Lock@14a9c020
+"Java2D Disposer" Id=129 WAITING on java.lang.ref.ReferenceQueue$Lock@75c6536f
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.lang.ref.ReferenceQueue$Lock@14a9c020
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@75c6536f
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
 	at sun.java2d.Disposer.run(Disposer.java:148)
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"ResearchIOThread" Id=138 TIMED_WAITING on java.util.TaskQueue@3d4918cd
+"ResearchIOThread" Id=128 TIMED_WAITING on java.util.TaskQueue@41d851f4
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@3d4918cd
+	-  waiting on java.util.TaskQueue@41d851f4
 	at java.util.TimerThread.mainLoop(Timer.java:552)
 	at java.util.TimerThread.run(Timer.java:505)
 
 
-"pool-2-thread-17" Id=132 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+"SeriousVote-SQL housekeeper" Id=121 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@76b0cd8e
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
-	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
-	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"pool-2-thread-15" Id=130 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
-	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
-	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"pool-2-thread-13" Id=128 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
-	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
-	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"pool-2-thread-12" Id=127 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
-	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
-	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"SeriousVote-SQL housekeeper" Id=124 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2cf0649a
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2cf0649a
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@76b0cd8e
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -1241,63 +1260,47 @@ Details:
 	...
 
 
-"ForkJoinPool.commonPool-worker-23" Id=123 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-6" Id=118 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-16" Id=122 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-7" Id=119 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-6" Id=121 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-24" Id=120 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-7" Id=120 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-14" Id=115 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-21" Id=119 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-0" Id=114 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-27" Id=118 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
-	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-
-
-"ForkJoinPool.commonPool-worker-0" Id=117 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
-	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-
-
-"Netty Epoll Server IO #0" Id=116 RUNNABLE (in native)
+"Netty Epoll Server IO #0" Id=113 RUNNABLE
 	at io.netty.channel.epoll.Native.epollWait0(Native Method)
 	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
 	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
@@ -1306,16 +1309,29 @@ Details:
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"Timer-1" Id=113 TIMED_WAITING on java.util.TaskQueue@7ca58106
+"Timer-1" Id=110 TIMED_WAITING on java.util.TaskQueue@6403ddc5
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@7ca58106
+	-  waiting on java.util.TaskQueue@6403ddc5
 	at java.util.TimerThread.mainLoop(Timer.java:552)
 	at java.util.TimerThread.run(Timer.java:505)
 
 
-"SeriousVote-SQL housekeeper" Id=106 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@95f712f
+"pool-2-thread-11" Id=106 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@95f712f
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"SeriousVote-SQL housekeeper" Id=104 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@67d77740
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@67d77740
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
@@ -1326,23 +1342,16 @@ Details:
 	...
 
 
-"Timer-0" Id=105 TIMED_WAITING on java.util.TaskQueue@2624102a
+"Timer-0" Id=103 TIMED_WAITING on java.util.TaskQueue@177b0a89
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@2624102a
+	-  waiting on java.util.TaskQueue@177b0a89
 	at java.util.TimerThread.mainLoop(Timer.java:552)
 	at java.util.TimerThread.run(Timer.java:505)
 
 
-"Keep-Alive-SocketCleaner" Id=102 WAITING on sun.net.www.http.KeepAliveStreamCleaner@3f0327cf
-	at java.lang.Object.wait(Native Method)
-	-  waiting on sun.net.www.http.KeepAliveStreamCleaner@3f0327cf
-	at sun.net.www.http.KeepAliveStreamCleaner.run(KeepAliveStreamCleaner.java:101)
-	at java.lang.Thread.run(Thread.java:750)
-
-
-"OkHttp metadata.luckperms.net Writer" Id=95 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6ffe2c98
+"OkHttp metadata.luckperms.net Writer" Id=93 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@797351bb
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6ffe2c98
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@797351bb
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1081)
@@ -1353,34 +1362,21 @@ Details:
 	...
 
 
-"luckperms-hikari housekeeper" Id=94 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ddaee41
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1ddaee41
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"OkHttp ConnectionPool" Id=93 TIMED_WAITING on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@1bf90890
+"OkHttp ConnectionPool" Id=91 TIMED_WAITING on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@3e456a5
 	at java.lang.Object.wait(Native Method)
-	-  waiting on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@1bf90890
+	-  waiting on me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool@3e456a5
 	at java.lang.Object.wait(Object.java:460)
 	at me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool.lambda$new$0(RealConnectionPool.java:62)
-	at me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool$$Lambda$1119/231536275.run(Unknown Source)
+	at me.lucko.luckperms.lib.okhttp3.internal.connection.RealConnectionPool$$Lambda$1119/574279750.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 
 	Number of locked synchronizers = 1
-	- java.util.concurrent.ThreadPoolExecutor$Worker@1b68861f
+	- java.util.concurrent.ThreadPoolExecutor$Worker@7e28c6f5
 
 
-"OkHttp metadata.luckperms.net" Id=92 RUNNABLE (in native)
+"OkHttp metadata.luckperms.net" Id=90 RUNNABLE (in native)
 	at java.net.SocketInputStream.socketRead0(Native Method)
 	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
 	at java.net.SocketInputStream.read(SocketInputStream.java:171)
@@ -1392,12 +1388,25 @@ Details:
 	...
 
 	Number of locked synchronizers = 1
-	- java.util.concurrent.locks.ReentrantLock$NonfairSync@3d62797f
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@5fd55cee
 
 
-"mysql-cj-abandoned-connection-cleanup" Id=89 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@23e608a7
+"luckperms-hikari housekeeper" Id=89 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@10b52adf
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@10b52adf
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"mysql-cj-abandoned-connection-cleanup" Id=87 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@73284ffb
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.lang.ref.ReferenceQueue$Lock@23e608a7
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@73284ffb
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
 	at me.lucko.luckperms.lib.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
@@ -1405,19 +1414,19 @@ Details:
 	at java.lang.Thread.run(Thread.java:750)
 
 	Number of locked synchronizers = 1
-	- java.util.concurrent.ThreadPoolExecutor$Worker@5eb899d6
+	- java.util.concurrent.ThreadPoolExecutor$Worker@697983e8
 
 
-"Thread-4" Id=87 RUNNABLE (in native)
+"Thread-4" Id=85 RUNNABLE (in native)
 	at sun.nio.fs.LinuxWatchService.poll(Native Method)
 	at sun.nio.fs.LinuxWatchService.access$600(LinuxWatchService.java:47)
 	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:314)
 	at java.lang.Thread.run(Thread.java:750)
 
 
-"pool-2-thread-8" Id=79 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+"pool-2-thread-10" Id=79 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
 	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
@@ -1428,22 +1437,9 @@ Details:
 	...
 
 
-"pool-2-thread-6" Id=77 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+"pool-2-thread-8" Id=77 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@52d87e45
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
-	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
-	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
-	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
-	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
-	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	...
-
-
-"pool-2-thread-3" Id=74 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6984427c
-	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6984427c
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@52d87e45
 	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
 	at java.util.concurrent.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:492)
@@ -1454,12 +1450,12 @@ Details:
 	...
 
 	Number of locked synchronizers = 1
-	- java.util.concurrent.ThreadPoolExecutor$Worker@4a1114fb
+	- java.util.concurrent.ThreadPoolExecutor$Worker@487143df
 
 
-"pool-2-thread-1" Id=72 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+"pool-2-thread-7" Id=76 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@5bf52446
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
 	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
@@ -1470,151 +1466,193 @@ Details:
 	...
 
 
-"ForkJoinPool.commonPool-worker-31" Id=57 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"pool-2-thread-6" Id=75 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"pool-2-thread-5" Id=74 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@7297f33
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	...
+
+
+"ForkJoinPool.commonPool-worker-17" Id=60 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-3" Id=61 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-10" Id=61 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-14" Id=64 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-16" Id=50 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-28" Id=62 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-9" Id=51 TIMED_WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-2" Id=52 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-20" Id=54 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-17" Id=59 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-31" Id=57 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-12" Id=46 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-12" Id=46 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-20" Id=54 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-13" Id=55 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-5" Id=47 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-2" Id=52 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-30" Id=48 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-1" Id=43 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-9" Id=51 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-19" Id=45 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-1" Id=43 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-15" Id=41 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-26" Id=44 TIMED_WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-8" Id=42 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-19" Id=45 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-29" Id=39 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-22" Id=40 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-22" Id=40 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-11" Id=37 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-4" Id=38 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"ForkJoinPool.commonPool-worker-25" Id=35 WAITING on java.util.concurrent.ForkJoinPool@26d7fd3c
+"ForkJoinPool.commonPool-worker-11" Id=37 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.ForkJoinPool@26d7fd3c
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
 	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
 
 
-"Sponge Async Scheduler Thread" Id=34 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3a6a6a54
+"ForkJoinPool.commonPool-worker-18" Id=36 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
 	at sun.misc.Unsafe.park(Native Method)
-	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3a6a6a54
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"ForkJoinPool.commonPool-worker-25" Id=35 WAITING on java.util.concurrent.ForkJoinPool@2399bff2
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@2399bff2
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+
+
+"Sponge Async Scheduler Thread" Id=34 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@279f6adc
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@279f6adc
 	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2163)
 	at org.spongepowered.common.scheduler.AsyncScheduler.preTick(AsyncScheduler.java:121)
 	at org.spongepowered.common.scheduler.SchedulerBase.runTick(SchedulerBase.java:109)
 	at org.spongepowered.common.scheduler.AsyncScheduler.mainLoop(AsyncScheduler.java:68)
-	at org.spongepowered.common.scheduler.AsyncScheduler$$Lambda$246/27217297.run(Unknown Source)
+	at org.spongepowered.common.scheduler.AsyncScheduler$$Lambda$246/909126612.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:750)
 
 
@@ -1623,11 +1661,11 @@ Details:
 	at java.io.FileInputStream.read(FileInputStream.java:255)
 	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
 	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
-	-  locked java.io.BufferedInputStream@14ed55e7
+	-  locked java.io.BufferedInputStream@1e455f22
 	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
 	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
 	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
-	-  locked java.io.InputStreamReader@75dd4ed
+	-  locked java.io.InputStreamReader@2fa39c86
 	at java.io.InputStreamReader.read(InputStreamReader.java:184)
 	...
 
@@ -1643,12 +1681,12 @@ Details:
 	at java.io.FilterInputStream.read(FilterInputStream.java:133)
 	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.fillBuffer(ReadAheadBufferedStream.java:131)
 	at org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream.read(ReadAheadBufferedStream.java:104)
-	-  locked org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream@4c01f1d8
+	-  locked org.mariadb.jdbc.internal.io.input.ReadAheadBufferedStream@3e18f561
 	at org.mariadb.jdbc.internal.io.input.StandardPacketInputStream.getPacketArray(StandardPacketInputStream.java:247)
 	...
 
 	Number of locked synchronizers = 1
-	- java.util.concurrent.locks.ReentrantLock$NonfairSync@25d00ac6
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@620db1f4
 
 
 "Server Infinisleeper" Id=29 TIMED_WAITING
@@ -1656,9 +1694,9 @@ Details:
 	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
 
 
-"Snooper Timer" Id=28 TIMED_WAITING on java.util.TaskQueue@5b6c31f6
+"Snooper Timer" Id=28 TIMED_WAITING on java.util.TaskQueue@56855ed8
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.util.TaskQueue@5b6c31f6
+	-  waiting on java.util.TaskQueue@56855ed8
 	at java.util.TimerThread.mainLoop(Timer.java:552)
 	at java.util.TimerThread.run(Timer.java:505)
 
@@ -1666,17 +1704,17 @@ Details:
 "Signal Dispatcher" Id=4 RUNNABLE
 
 
-"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@32ff7cca
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@6571af22
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.lang.ref.ReferenceQueue$Lock@32ff7cca
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@6571af22
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
 
 
-"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@7133c47c
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@1c3bed10
 	at java.lang.Object.wait(Native Method)
-	-  waiting on java.lang.ref.Reference$Lock@7133c47c
+	-  waiting on java.lang.ref.Reference$Lock@1c3bed10
 	at java.lang.Object.wait(Object.java:502)
 	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
@@ -1690,8 +1728,8 @@ Details:
 	Operating System: Linux (amd64) version 5.10.0-22-amd64
 	Java Version: 1.8.0_362, Temurin
 	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Temurin
-	Memory: 1340599032 bytes (1278 MB) / 5821693952 bytes (5552 MB) up to 11453595648 bytes (10923 MB)
-	JVM Flags: 1 total; -Xmx12288M
+	Memory: 3837157832 bytes (3659 MB) / 7359430656 bytes (7018 MB) up to 15271460864 bytes (14564 MB)
+	JVM Flags: 1 total; -Xmx16384M
 	IntCache: cache: 0, tcache: 0, allocated: 7, tallocated: 112
 	FML: MCP 9.42 Powered by Forge 14.23.5.2860 262 mods loaded, 262 mods active
 	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
@@ -2075,9 +2113,9 @@ AstralCore (astralsorcery-1.12.2-1.10.21.jar)
 		* antiqueatlasapi (5.1) from antiqueatlas-1.12.2-4.5.1.jar
 		* appliedenergistics2|API (rv6) from appliedenergistics2-rv6-stable-7.jar
 		* Base|API (1.0.0) from base-1.12.2-3.13.0.jar
-		* Baubles|API (1.4.0.2) from Baubles-1.12-1.5.2.jar
+		* Baubles|API (1.4.0.2) from ImprovedBackpacks-1.12.2-1.5.0.0.jar
 		* betteradvancements|API (0.1.0.77) from BetterAdvancements-1.12.2-0.1.0.77.jar
-		* BetterWithModsAPI (Beta 0.6) from AppleSkin-mc1.12-1.0.14.jar
+		* BetterWithModsAPI (Beta 0.6) from BetterWithMods-1.12-2.3.20-1027.jar
 		* betterwithmodsAPI (1.12-2.3.20-1027) from BetterWithMods-1.12-2.3.20-1027.jar
 		* BetweenlandsAPI (1.12.9) from TheBetweenlands-3.5.10-universal.jar
 		* bloodmagic-api (2.0.0) from BloodMagic-1.12.2-2.4.1-103.jar
@@ -2111,7 +2149,7 @@ AstralCore (astralsorcery-1.12.2-1.10.21.jar)
 		* ctm-api-textures (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
 		* ctm-api-utils (0.1.0) from CTM-MC1.12.2-0.3.3.22.jar
 		* farmingforblockheads|api (1.0) from FarmingForBlockheads_1.12.2-3.1.28.jar
-		* Galacticraft API (1.2) from GalacticraftCore-1.12.2-4.0.2.280.jar
+		* Galacticraft API (1.0) from GalacticraftCore-1.12.2-4.0.2.280.jar
 		* Guide-API|API (2.0.0) from Guide-API-1.12-2.1.8-63.jar
 		* ImmersiveEngineering|API (1.0) from ImmersiveEngineering-0.12-98.jar
 		* ImmersiveEngineering|ImmersiveFluxAPI (1.0) from ImmersiveEngineering-0.12-98.jar
@@ -2162,6 +2200,6 @@ AstralCore (astralsorcery-1.12.2-1.10.21.jar)
 		Optifine Installed: False
 	AE2 Integration: IC2:OFF, RC:OFF, MFR:OFF, Waila:ON, Mekanism:OFF, OpenComputers:OFF, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:ON
 	Profiler Position: N/A (disabled)
-	Player Count: 1 / 10; [EntityPlayerMP['Kwando'/633, l='world', x=806.23, y=126.60, z=185.36]]
+	Player Count: 1 / 10; [EntityPlayerMP['Kwando'/646, l='world', x=768.58, y=80.78, z=335.71]]
 	Is Modded: Definitely; Server brand changed to 'fml,forge,sponge'
 	Type: Dedicated Server (map_server.txt)
